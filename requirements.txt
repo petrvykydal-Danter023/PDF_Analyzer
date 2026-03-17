@@ -1,0 +1,9 @@
+streamlit==1.42.0
+pytesseract==0.3.13
+opencv-python==4.11.0.86
+Pillow==11.1.0
+pandas==2.2.3
+pdf2image==1.17.0
+pyyaml==6.0.1
+requests==2.31.0
+pypdfium2==4.30.0
