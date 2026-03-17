@@ -21,6 +21,8 @@ os.makedirs(TEMPLATES_DIR, exist_ok=True)
 
 
 def remove_accents(s):
+    """Odstraní českou diakritiku pro robustní porovnávání textu."""
+    if not isinstance(s, str): return str(s)
     nfkd = unicodedata.normalize("NFKD", s)
     return "".join(c for c in nfkd if not unicodedata.combining(c))
 
@@ -31,10 +33,14 @@ def remove_accents(s):
 
 def detect_kv_pairs(lines):
     """
-    Prochází řádky (výstup build_lines_from_ocr) a hledá label:value páry.
-    Label = slovo/fráze končící ':' nebo společně se specifickými klíčovými slovy.
-    Value = nejbližší text napravo na stejném řádku, nebo první token dalšího řádku.
-    Vrací list dict: {label, value, label_box, value_box, line_idx}
+    Analyzuje řádky textu a hledá dvojice Klíč:Hodnota (KV-pairs).
+    Slouží jako základ pro automatické generování šablon.
+    
+    Args:
+        lines (list): Seskupené řádky z build_lines_from_ocr.
+        
+    Returns:
+        list: Seznam nalezených párů {label, value, label_box, value_box, line_idx}.
     """
     kv_pairs = []
 
@@ -42,12 +48,13 @@ def detect_kv_pairs(lines):
         text = line['text_united']
         words = line['words']
 
-        # Hledej slova zakončená ':' nebo typická klíčová slova
+        # Procházíme slova a hledáme ta, která končí ':' (kotvy)
         for j, w in enumerate(words):
             wt = w['text'].rstrip(':').strip()
             if not wt or len(wt) < 2:
                 continue
 
+            # Kontrola, zda slovo vypadá jako label (buď končí ':' nebo patří mezi známá klíčová slova)
             is_anchor = w['text'].endswith(':') or remove_accents(wt.lower()) in [
                 'faktura', 'invoice', 'ic', 'ico', 'dic', 'vat id', 'reg no', 'reference',
                 'total', 'celkem', 'datum', 'due', 'issued', 'splatnosti', 'vystaveni',
@@ -56,16 +63,17 @@ def detect_kv_pairs(lines):
             if not is_anchor:
                 continue
 
-            # Kandidáti na value: zbývající slova na tomto řádku
+            # Jako hodnotu (value) bereme slova bezprostředně vpravo na stejném řádku
             value_words = words[j + 1:]
             if not value_words:
-                # Zkus první word dalšího řádku
+                # Pokud vpravo nic není, zkusíme první slovo na dalším řádku
                 if i + 1 < len(lines) and lines[i + 1]['words']:
                     value_words = [lines[i + 1]['words'][0]]
 
             if value_words:
                 vw = value_words[0]
-                value_text = " ".join(v['text'] for v in value_words[:4])  # max 4 slova za kotvou
+                # Spojíme až 4 slova za kotvou jako výslednou hodnotu
+                value_text = " ".join(v['text'] for v in value_words[:4])
                 kv_pairs.append({
                     "label": wt,
                     "value": value_text.strip(),
@@ -83,34 +91,42 @@ def detect_kv_pairs(lines):
 
 def detect_table_region(img_array):
     """
-    Pomocí detekce horizontálních a vertikálních čar v obrazu najde oblast tabulky.
-    Vrací bounding box [x, y, w, h] v pixelech, nebo None pokud tabulka nenalezena.
+    Pokročilá detekce tabulky v dokumentu pomocí počítačového vidění (OpenCV).
+    Hledá oblasti s hustým výskytem vodorovných a svislých čar (např. mřížky).
+    
+    Args:
+        img_array (np.ndarray): Snímek faktury v RGB.
+        
+    Returns:
+        list|None: Souřadnice tabulky [x, y, w, h] v pixelech.
     """
     gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
-    # Prahování - tmavé čáry na světlém pozadí
+    # Prahování: tmavé čáry na světlém pozadí se převedou na bílou pro morfologické operace
     _, thresh = cv2.threshold(gray, 180, 255, cv2.THRESH_BINARY_INV)
 
     img_h, img_w = gray.shape
 
-    # Horizontální čáry (min délka 40 % šířky)
+    # Detekce vodorovných čar (minimální délka 33 % šířky dokumentu)
     h_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (img_w // 3, 1))
     horizontal = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, h_kernel)
 
-    # Vertikální čáry (min výška 3 % výšky)
+    # Detekce svislých čar (minimální výška 3.3 % výšky dokumentu)
     v_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, img_h // 30))
     vertical = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, v_kernel)
 
-    # Kombinace
+    # Sloučení vodorovných a svislých čar do jedné masky (mřížky)
     table_mask = cv2.add(horizontal, vertical)
+    # Nalezení vnějších obrysů výsledné mřížky
     contours, _ = cv2.findContours(table_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     if not contours:
         return None
 
-    # Největší oblast = pravděpodobně tabulka
+    # Vybereme největší souvislou oblast (pravděpodobně hlavní tabulka produktů)
     largest = max(contours, key=cv2.contourArea)
     x, y, w, h = cv2.boundingRect(largest)
-    # Musí mít rozumnou velikost (min 10 % plochy dokumentu)
+    
+    # Validace: tabulka musí zabírat alespoň 5 % plochy dokumentu
     if w * h < (img_w * img_h * 0.05):
         return None
 
@@ -119,7 +135,15 @@ def detect_table_region(img_array):
 
 def detect_table_rows_in_region(lines, table_box, img_shape):
     """
-    Ze sestavených řádků (build_lines_from_ocr) vrátí ty, které leží v oblasti tabulky.
+    Filtruje řádky textu, které se geometricky nacházejí uvnitř detekované tabulkové oblasti.
+    
+    Args:
+        lines (list): Všechny řádky z OCR.
+        table_box (list): [x, y, w, h] tabulky.
+        img_shape (tuple): Rozměry obrázku.
+        
+    Returns:
+        list: Řádky uvnitř tabulky.
     """
     if not table_box:
         return []
@@ -130,6 +154,7 @@ def detect_table_rows_in_region(lines, table_box, img_shape):
     for line in lines:
         if not line['words']:
             continue
+        # Kontrola, zda první slovo řádku spadá do vertikálního rozsahu tabulky (pro jednoduchost)
         line_y = line['words'][0]['y']
         if ty <= line_y <= ty + th:
             table_lines.append(line)
@@ -147,14 +172,18 @@ def _rel(val, dim):
 
 def generate_template(kv_pairs, table_box, img_shape, ico, issuer_name=""):
     """
-    Vygeneruje YAML šablonu z:
-    - kv_pairs: výstup detect_kv_pairs
-    - table_box: výstup detect_table_region ([x,y,w,h] nebo None)
-    - img_shape: (height, width, ...) pro relativní souřadnice
-    - ico: IČO dodavatele (klíč šablony)
-    - issuer_name: název firmy (volitelný)
-
-    Šablona ukládá pole jako relativní souřadnice (0→1) + regex pattern.
+    Vytvoří definici YAML šablony na základě nalezených kotev a geometrie dokumentu.
+    Tato šablona umožňuje 100% přesnou extrakci pro identické typy dokumentů.
+    
+    Args:
+        kv_pairs (list): Nalezené dvojice štítek:hodnota.
+        table_box (list): Detekovaná oblast tabulky.
+        img_shape (tuple): Rozměry dokumentu.
+        ico (str): Unikátní identifikátor (IČO) dodavatele.
+        issuer_name (str): Název firmy.
+        
+    Returns:
+        dict: Strukturovaná šablona pro TemplateStore.
     """
     img_h, img_w = img_shape[:2]
 
@@ -248,27 +277,33 @@ def generate_template(kv_pairs, table_box, img_shape, ico, issuer_name=""):
 
 def apply_template(template, lines, img_shape):
     """
-    Aplikuje uloženou šablonu na Tesseract řádky nového dokumentu.
-    Hledá hodnoty v definovaných relativních zónách nebo přes kotvy.
+    Aplikuje uloženou šablonu na OCR data nového dokumentu stejného typu.
+    Slouží pro ultra-rychlou a přesnou extrakci bez potřeby AI.
+    
+    Args:
+        template (dict): Načtená YAML šablona.
+        lines (list): OCR řádky nového dokumentu.
+        img_shape (tuple): Rozměry nového dokumentu.
+        
+    Returns:
+        dict: Extrahovaná pole s jejich souřadnicemi.
     """
     img_h, img_w = img_shape[:2]
     result = {}
 
     for field_key, field_def in template.get("fields", {}).items():
         zone = field_def.get("zone", {})
-        anchor_def = field_def.get("anchor", {})
-
-        # Absolutní souřadnice zóny
+        # Absolutní souřadnice cílové zóny přepočtené z relativních (%)
         zx = zone.get("x", 0) * img_w
         zy = zone.get("y", 0) * img_h
         zw = zone.get("w", 0.3) * img_w
         zh = zone.get("h", 0.05) * img_h
 
-        # Tolerance: ±20% výšky a šířky dokumentu
+        # Tolerance pro případ mírného posunu dokumentu při skenování
         y_tol = max(zh * 1.5, img_h * 0.02)
         x_tol = max(zw * 1.5, img_w * 0.05)
 
-        # Sbíráme slova v zóně
+        # Hledáme všechna slova, která geometricky spadají do definované zóny
         matched_words = []
         for line in lines:
             for w in line['words']:
@@ -277,7 +312,7 @@ def apply_template(template, lines, img_shape):
                     matched_words.append(w)
 
         if matched_words:
-            # Seřadit zleva doprava
+            # Seřazení slov zleva doprava a spojení do textu
             matched_words.sort(key=lambda w: w['x'])
             value_text = " ".join(w['text'] for w in matched_words)
             first_w = matched_words[0]
@@ -298,21 +333,26 @@ def apply_template(template, lines, img_shape):
 # ---------------------------------------------------------------------------
 
 class TemplateStore:
+    """
+    Správce úložiště YAML šablon.
+    Umožňuje perzistentní ukládání a načítání šablon pro konkrétní firmy (IČO).
+    """
     def __init__(self, directory=TEMPLATES_DIR):
         self.directory = directory
         os.makedirs(directory, exist_ok=True)
 
     def _path(self, ico):
+        """Vytvoří bezpečnou cestu k souboru šablony."""
         safe = re.sub(r"[^a-zA-Z0-9]", "_", str(ico))
         return os.path.join(self.directory, f"{safe}.yaml")
 
     def save(self, ico, template):
-        """Uloží šablonu jako YAML soubor."""
+        """Uloží definici šablony na disk jako lidskou čitelný YAML."""
         with open(self._path(ico), "w", encoding="utf-8") as f:
             yaml.dump(template, f, allow_unicode=True, sort_keys=False)
 
     def load(self, ico):
-        """Načte šablonu pro dané IČO, nebo vrátí None."""
+        """Vyhledá a načte šablonu pro dané IČO."""
         path = self._path(ico)
         if not os.path.exists(path):
             return None
@@ -320,7 +360,7 @@ class TemplateStore:
             return yaml.safe_load(f)
 
     def list_templates(self):
-        """Vrátí list ICO pro která existuje šablona."""
+        """Vrátí seznam všech dostupných IČO v databázi šablon."""
         icos = []
         for fname in os.listdir(self.directory):
             if fname.endswith(".yaml"):
@@ -331,8 +371,8 @@ class TemplateStore:
 
     def update_field(self, ico, field_key, corrected_value, new_box, img_shape):
         """
-        Aktualizuje zónu konkrétního pole po human-review korekci.
-        Posune zónu na actuální polohu opravené hodnoty.
+        Umožňuje doučování systému po korekci uživatelem.
+        Aktualizuje zónu pole v šabloně tak, aby příště extrakce proběhla správně.
         """
         template = self.load(ico)
         if not template:

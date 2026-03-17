@@ -3,6 +3,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 import json
 
+# --- MODULY PRO EXTRAKCI A SPRÁVU ŠABLON ---
 from extraction_logic import extract_data_with_coords
 from template_engine import TemplateStore
 import pypdfium2 as pdfium
@@ -10,6 +11,7 @@ import pypdfium2 as pdfium
 st.set_page_config(layout="wide", page_title="Extrakce Faktur – Auto-Template Engine")
 store = TemplateStore()
 
+# --- HLAVNÍ NADPIS A POPIS SYSTÉMU ---
 st.title("📄 Extrakce Faktur – Auto-Template Engine")
 st.markdown("""
 **Jak to funguje:**
@@ -19,45 +21,51 @@ st.markdown("""
 - Šablonu si **zkontrolujete v UI** a jedním klikem uložíte → příští faktura stejné firmy = perfektní výsledek.
 """)
 
+# --- DATABÁZE ŠABLON (PŘEHLED) ---
 known = store.list_templates()
 if known:
     st.sidebar.success(f"📁 Šablony v databázi: **{len(known)}** firem")
     st.sidebar.caption("IČO: " + ", ".join(known))
 else:
-    st.sidebar.info("Zatím žádné šablony. Nahrajte první fakturu a uložte šablonu!")
+    st.sidebar.info("Zatím žádné šablony. Nahrajte první fakturu!")
 
-st.sidebar.divider()
+# --- NASTAVENÍ EXTRAKCE (REŽIMY) ---
 st.sidebar.subheader("⚙️ Nastavení extrakce")
 extraction_mode = st.sidebar.radio(
     "Metoda extrakce:",
-    ["Heuristika / Šablony", "AI (Gemini)"],
+    ["Heuristika / Šablony", "AI (LLM)"],
     index=0,
-    help="AI mód (Gemini) je vhodnější pro atypické nebo anglické dokumenty."
+    help="AI mód (Gemini/OpenRouter) je vhodnější pro atypické nebo anglické dokumenty."
 )
 
 ai_key = None
-if extraction_mode == "AI (Gemini)":
-    ai_key = st.sidebar.text_input("Gemini API Key", value="AIzaSyD6Z6F3e1exP1liF2VLk6rpfvHXFDGP3aQ", type="password", help="Získejte klíč na Google AI Studio.")
+if extraction_mode == "AI (LLM)":
+    # API klíč pro LLM modely (podporuje Gemini i OpenRouter)
+    ai_key = st.sidebar.text_input("API Key", type="password", help="Klíč začínající 'sk-or-' použije OpenRouter.")
     if not ai_key:
         st.sidebar.warning("⚠️ Pro AI mód je nutný API klíč.")
 
 uploaded_file = st.file_uploader("Nahrajte fakturu (PNG / JPG / PDF)", type=["png", "jpg", "jpeg", "pdf"])
 
 if uploaded_file:
-    # PDF → obrázek (první strana)
+    # 1. Převod dokumentu na manipulovatelný obrázek (Bitmapa)
     if uploaded_file.name.lower().endswith('.pdf'):
+        # PDF se převede na renderovanou bitmapu pomocí pypdfium2 (pouze 1. strana)
         pdf = pdfium.PdfDocument(uploaded_file.read())
         page = pdf.get_page(0)
+        # Používáme škálování 3x pro dosažení vysokého rozlišení (klíčové pro přesné OCR)
         image = page.render(scale=3).to_pil()
     else:
+        # Přímé načtení rastrového obrázku (PNG/JPG)
         image = Image.open(uploaded_file)
 
-    img_array = np.array(image.convert('RGB'))
-
-    mode_val = "ai" if extraction_mode == "AI (Gemini)" else "heuristic"
+    # --- HLAVNÍ EXTRAKČNÍ PIPELINE ---
+    # Převod volby z UI na interní parametr (ai vs heuristic)
+    mode_val = "ai" if extraction_mode == "AI (LLM)" else "heuristic"
     
     with st.spinner('🔍 Analyzuji dokument...'):
         try:
+            # Volání orchestrátoru, který provede OCR a sémantickou analýzu
             data, raw_ocr, meta = extract_data_with_coords(img_array, mode=mode_val, api_key=ai_key)
             success = True
         except Exception as e:
@@ -77,18 +85,21 @@ if uploaded_file:
 
         col1, col2 = st.columns([1, 1])
 
-        # ---- Levý sloupec: Vizualizace ----
+        # ---- Levý sloupec: Vizualizace (Prostorová kontrola) ----
         with col1:
-            st.subheader("Vizualizace (Bounding Boxy)")
-            show_all = st.checkbox("Zobrazit všechna detekovaná pole (žlutě)", value=True)
+            st.subheader("🖼️ Vizualizace (Bounding Boxy)")
+            show_all = st.checkbox("Zobrazit všechna detekovaná pole (žlutě/oranžově)", value=True)
             draw = ImageDraw.Draw(image)
 
+            # Funkce pro rekurzivní vykreslení boxů všech extrahovaných polí
             def draw_boxes(obj, color="red"):
                 if isinstance(obj, dict):
                     if "box" in obj and obj["box"]:
                         b = obj["box"]
                         if b and len(b) == 4:
+                            # Vykreslení obdélníku kolem hodnoty
                             draw.rectangle([b[0], b[1], b[0]+b[2], b[1]+b[3]], outline=color, width=3)
+                            # Zobrazení náhledu textu nad boxem
                             val = str(obj.get("hodnota", ""))[:30]
                             draw.text((b[0], max(0, b[1]-15)), val, fill=color)
                     for k, v in obj.items():
@@ -98,37 +109,40 @@ if uploaded_file:
                     for item in obj:
                         draw_boxes(item, color)
 
-            # 1. Všechna detekovaná KV pole (žlutě)
+            # 1. Vizualizace všech OCR kotev (KV-pairs) - užitečné pro ladění šablon
             if show_all and meta.get("kv_pairs"):
                 for kv in meta["kv_pairs"]:
                     lb = kv["label_box"]
                     vb = kv["value_box"]
+                    # Žlutá = Štítek (Label), Oranžová = Hodnota (Value)
                     draw.rectangle([lb[0], lb[1], lb[0]+lb[2], lb[1]+lb[3]], outline="yellow", width=2)
                     draw.rectangle([vb[0], vb[1], vb[0]+vb[2], vb[1]+vb[3]], outline="orange", width=2)
 
-            # 2. Úspěšně extrahovaná data (červeně)
+            # 2. Úspěšně extrahovaná data (zobrazeno červeně)
             draw_boxes(data, color="red")
 
-            # 3. Tabulkový region (modře)
+            # 3. Zvýraznění tabulkového regionu detekovaného OpenCV (modře)
             if meta.get("table_box"):
                 tb = meta["table_box"]
                 draw.rectangle([tb[0], tb[1], tb[0]+tb[2], tb[1]+tb[3]], outline="blue", width=4)
                 draw.text((tb[0], tb[1]-20), "TABLE REGION (OpenCV)", fill="blue")
 
+            # Zobrazení výsledného obrázku s překryvem
             st.image(image, use_column_width=True)
 
         # ---- Pravý sloupec: JSON + Human Review ----
+        # ---- Pravý sloupec: JSON výsledky a Human-in-the-Loop review ----
         with col2:
-            st.subheader("Výsledný JSON")
+            st.subheader("📊 Výsledný JSON")
             st.json(data)
 
-            # RAW OCR text pro debugging
-            with st.expander("🔎 Raw OCR text"):
-                raw_text = " ".join([w for w in raw_ocr['text'] if str(w).strip()])
-                st.text_area("Tesseract přečetl:", raw_text, height=120)
+            # RAW OCR výstup pro pokročilé uživatele a ladění
+            with st.expander("🔎 Kontrola surového OCR textu (Tesseract)"):
+                raw_text = " ".join([str(w) for w in raw_ocr['text'] if str(w).strip()])
+                st.text_area("To, co systém vidí jako text:", raw_text, height=120)
 
             # ======================================================
-            # HUMAN-IN-THE-LOOP: Uložit šablonu
+            # HUMAN-IN-THE-LOOP: Uložit šablonu (Doučování systému)
             # ======================================================
             if mode == "heuristic" and meta.get("candidate_template"):
                 st.divider()
