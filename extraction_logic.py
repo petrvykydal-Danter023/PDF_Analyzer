@@ -4,6 +4,7 @@ import re
 import unicodedata
 import requests
 import google.generativeai as genai
+import openai
 import json
 from thefuzz import fuzz, process
 
@@ -38,17 +39,11 @@ def find_spatial_neighbors(anchor_word, all_words, direction='right', threshold=
     neighbors.sort(key=lambda x: (x['x'] - ax)**2 + (x['y'] - ay)**2)
     return neighbors
 
-def extract_with_gemini(all_text, api_key):
-    """Volá Gemini API k extrakci strukturovaných dat z textu."""
+def extract_with_llm(all_text, api_key):
+    """Volá LLM (Gemini nebo OpenRouter) k extrakci strukturovaných dat z textu."""
     if not api_key:
         return None
-    
-    genai.configure(api_key=api_key)
-    
-    # Zkusíme několik variant jmen modelů (pro případ různých verzí knihovny/klíčů)
-    model_names = ['gemini-1.5-flash', 'gemini-flash-latest', 'gemini-2.0-flash']
-    model = None
-    
+
     prompt = f"""
     Extract invoice data from the following OCR text into a clean, normalized JSON format.
     Return ONLY the raw JSON without any markdown formatting or explanations.
@@ -102,21 +97,51 @@ def extract_with_gemini(all_text, api_key):
     OCR TEXT:
     {all_text}
     """
-    
-    last_err = None
-    for name in model_names:
+
+    # Detekce OpenRouter klíče
+    if api_key.startswith("sk-or-"):
         try:
-            model = genai.GenerativeModel(name)
-            response = model.generate_content(prompt)
-            # Odstraníme případné markdown bloky
-            clean_json = response.text.replace('```json', '').replace('```', '').strip()
+            client = openai.OpenAI(
+                base_url="https://openrouter.ai/api/v1",
+                api_key=api_key
+            )
+            response = client.chat.completions.create(
+                model="deepseek/deepseek-chat", # Výchozí model pro OpenRouter
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.1
+            )
+            clean_json = response.choices[0].message.content.replace('```json', '').replace('```', '').strip()
             return json.loads(clean_json)
         except Exception as e:
-            last_err = e
-            continue
-            
-    print(f"Gemini error (all models failed): {last_err}")
-    return None
+            print(f"OpenRouter error: {e}")
+            # Fallback na jiný model u OpenRouteru pokud deepseek selže
+            try:
+                response = client.chat.completions.create(
+                    model="google/gemini-flash-1.5",
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=0.1
+                )
+                clean_json = response.choices[0].message.content.replace('```json', '').replace('```', '').strip()
+                return json.loads(clean_json)
+            except Exception as e2:
+                print(f"OpenRouter fallback error: {e2}")
+                return None
+    else:
+        # Původní Gemini logika
+        genai.configure(api_key=api_key)
+        model_names = ['gemini-1.5-flash', 'gemini-flash-latest', 'gemini-2.0-flash']
+        last_err = None
+        for name in model_names:
+            try:
+                model = genai.GenerativeModel(name)
+                response = model.generate_content(prompt)
+                clean_json = response.text.replace('```json', '').replace('```', '').strip()
+                return json.loads(clean_json)
+            except Exception as e:
+                last_err = e
+                continue
+        print(f"Gemini error (all models failed): {last_err}")
+        return None
 
 def find_text_box(target_text, ocr_data):
     """
@@ -533,12 +558,13 @@ def extract_data_with_coords(img_array, mode="heuristic", api_key=None):
     lines = build_lines_from_ocr(d)
     img_shape = img_array.shape
 
-    # 2. AI Mode (Gemini)
+    # 2. AI Mode (Gemini/OpenRouter)
     if mode == "ai" and api_key:
-        raw_ai_data = extract_with_gemini(all_text, api_key)
+        raw_ai_data = extract_with_llm(all_text, api_key)
         if raw_ai_data:
             data = map_json_to_boxes(raw_ai_data, d)
-            data["metadata"] = {"typ_dokumentu": classify_doc(all_text), "stranky": 1, "rezim": "AI (Gemini)"}
+            llm_name = "OpenRouter" if api_key.startswith("sk-or-") else "Gemini"
+            data["metadata"] = {"typ_dokumentu": classify_doc(all_text), "stranky": 1, "rezim": f"AI ({llm_name})"}
             return data, d, {"mode": "ai", "ico": None}
 
     # 3. Zkus IČO

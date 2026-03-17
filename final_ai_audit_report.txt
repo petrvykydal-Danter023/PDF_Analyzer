@@ -1,0 +1,1649 @@
+====================================================
+       FINAL AI EXTRACTION AUDIT REPORT             
+====================================================
+
+### FILE: 241014_no IFSC tax code_ P32 tax_anon.pdf
+----------------------------------------
+RAW OCR TEXT EXTRACTED:
+Blue Horizon Technologies LLC
+
+742 Evergreen Terrace ;
+USA Hard to Find-Mini Machine Screws
+601-964-48785
+
+CUSTOMER:
+
+Delta Office Technology s.r.o.
+Marek Benda
+
+Štefánikova 223/15
+
+301 00 Plzeň
+
+Czech Republic, Czech Republic
+
+SOLD TO: SHIP TO:
+
+Delta Office Technology s.r.o.
+
+Delta Office Technology s.r.o.
+Marek Benda
+
+Marek Benda
+
+Štefánikova 223/15 Štefánikova 223/15
+301 00 Plzeň 301 00 Plzeň
+
+Czech Republic, Czech Republic Czech Republic
++420812131440
+
+purchase ©kubala.com
+
+Invoice No. 241914
+
+Date Ordered: Tuesday 03 September, 2025
+Payment Method: PayPal or Credit Card
+
+Products Model Tax Price (ex) Price (inc) Total (ex) Total (inc)
+2000 x M1.2-0.25 x 2.5mm Stainless Steel Pan Head 20999 0% $0.60 $0.60 $1,200.00 $1,200.00
+Screw #20999
+
+Sub-Total: $1,200.00
+Use Your Own FedEx Account (FedEx - Put your account number, Shipping method (Next Day, etc) in $5.00
+the instruction box below. This option is ONLY good for FedEx on your account.): .
+
+Total: $1,205.00
+Date Added Status Comments
+09/03/2024 04:09:31 Confirmed Fedex account number 276577269, Fedex International Priority Next Day
+09/03/2024 04:09:31 Confirmed PayPal status: Completed © 01:09:15 Sep 03, 2025 PDT
+
+Trans ID:1PN553364T989415X
+Amount: 1205.00 USD.
+
+--------------------
+AI EXTRACTED JSON:
+{
+  "typ_dokumentu": {
+    "hodnota": "FAKTURA",
+    "box": []
+  },
+  "prodavajici": {
+    "nazev": {
+      "hodnota": "Blue Horizon Technologies LLC",
+      "box": [
+        116,
+        121,
+        615,
+        35
+      ]
+    },
+    "ico": {
+      "hodnota": "None",
+      "box": []
+    },
+    "dic": {
+      "hodnota": "None",
+      "box": []
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "742 Evergreen Terrace",
+        "box": [
+          115,
+          165,
+          457,
+          34
+        ]
+      },
+      "mesto": {
+        "hodnota": "None",
+        "box": []
+      },
+      "psc": {
+        "hodnota": "None",
+        "box": []
+      },
+      "zeme": {
+        "hodnota": "USA",
+        "box": [
+          116,
+          252,
+          79,
+          28
+        ]
+      }
+    },
+    "bankovni_spojeni": {
+      "cislo_uctu": {
+        "hodnota": "None",
+        "box": []
+      },
+      "iban": {
+        "hodnota": "None",
+        "box": []
+      },
+      "swift": {
+        "hodnota": "None",
+        "box": []
+      }
+    }
+  },
+  "odberatel": {
+    "nazev": {
+      "hodnota": "Delta Office Technology s.r.o.",
+      "box": [
+        119,
+        400,
+        365,
+        24
+      ]
+    },
+    "ico": {
+      "hodnota": "None",
+      "box": []
+    },
+    "dic": {
+      "hodnota": "None",
+      "box": []
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "Štefánikova 223/15",
+        "box": [
+          118,
+          458,
+          244,
+          25
+        ]
+      },
+      "mesto": {
+        "hodnota": "Plzeň",
+        "box": [
+          216,
+          488,
+          61,
+          22
+        ]
+      },
+      "psc": {
+        "hodnota": "301 00",
+        "box": [
+          119,
+          490,
+          84,
+          20
+        ]
+      },
+      "zeme": {
+        "hodnota": "Czech Republic",
+        "box": [
+          127,
+          520,
+          193,
+          24
+        ]
+      }
+    }
+  },
+  "faktura": {
+    "cislo_faktury": {
+      "hodnota": "241914",
+      "box": [
+        283,
+        900,
+        103,
+        20
+      ]
+    },
+    "variabilni_symbol": {
+      "hodnota": "None",
+      "box": []
+    },
+    "datum_vystaveni": {
+      "hodnota": "2025-09-03",
+      "box": [
+        679,
+        944,
+        60,
+        20
+      ]
+    },
+    "datum_splatnosti": {
+      "hodnota": "None",
+      "box": []
+    },
+    "zpusob_uhrady": {
+      "hodnota": "PayPal or Credit Card",
+      "box": [
+        373,
+        983,
+        261,
+        24
+      ]
+    }
+  },
+  "produkty": [
+    {
+      "nazev": {
+        "hodnota": "M1.2-0.25 x 2.5mm Stainless Steel Pan Head Screw",
+        "box": [
+          240,
+          1102,
+          126,
+          20
+        ]
+      },
+      "mnozstvi": 2000.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": []
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "$0.60",
+          "box": [
+            1098,
+            1102,
+            77,
+            23
+          ]
+        },
+        "hodnota": {
+          "hodnota": "0.6",
+          "box": [
+            1098,
+            1102,
+            77,
+            23
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "$1,200.00",
+          "box": [
+            1385,
+            1102,
+            139,
+            24
+          ]
+        },
+        "hodnota": {
+          "hodnota": "1200.0",
+          "box": []
+        }
+      },
+      "dph_sazba": 0
+    }
+  ],
+  "celkem": {
+    "celkova_cena": {
+      "raw": {
+        "hodnota": "$1,205.00",
+        "box": [
+          1575,
+          1284,
+          139,
+          24
+        ]
+      },
+      "hodnota": {
+        "hodnota": "1205.0",
+        "box": [
+          607,
+          1490,
+          80,
+          15
+        ]
+      },
+      "mena": "USD"
+    },
+    "zaklad_dph": {
+      "hodnota": "1200.0",
+      "box": []
+    },
+    "dph_celkem": {
+      "hodnota": "0.0",
+      "box": []
+    }
+  },
+  "metadata": {
+    "typ_dokumentu": "FAKTURA",
+    "stranky": 1,
+    "rezim": "AI (OpenRouter)"
+  }
+}
+
+==================================================
+
+### FILE: Cz invoice in EUR_anonym.pdf
+----------------------------------------
+RAW OCR TEXT EXTRACTED:
+DAŇOVÝ DOKLAD
+
+FAKTURA č. 15786435
+
+Dodavatel : TechMorava Systems s.r.o. OFFICIAL | variabilní symbol : 424401724
+Lípařská 112/7 [ELECTRONIC]
+
+77900 Olomouc
+IC : 27159384 DIČ : CZ27159384
+
+Konstantní symbol : 0008
+Společnost je vedená u rejstříkového soudu v Brně, zn. C 38477
+datovka ID: 77weae. Za obaly níže uvedených balených výrobků byl uhrazen pod
+
+identifikačním číslem EK-F0004587 poplatek za zajištění zpětného odběru a využití | | | | |
+
+Pen. ústav: ČSOB a.s. Zlín Bank. spoj. CZK: 399848093 /0300 | /BAN: CZ46 0300 0000 0003 7887 8983 SWIFT: CIMO CZ PL
+Bank. spoj. EUR: 894502919 /0300 | /BAN: CZ75 0300 0000 0001 8645 2998 | SWIFT: CIMO CZ PL
+
+Místo určení : Bohemia Consulting Group a.s. Odběratel: Vltava IT Services s.r.o.
+
+Na Příkopě 854/14 K Letišti 1045/2
+11000 Praha 1 37001 České Budějovice
+IČ : 06548219 DIČ : CZ06548219 IČ : 29481736 DIČ : CZ29481736
+
+Datum vystavení daňového dokladu : 30.08.2025| Forma úhrady : Platebním příkazem
+Datum uskutečnění zdanitelného plnění : 30.08.2025| Způsob dopravy : DPD
+Datum splatnosti : 13.09.2025
+
+řádek Označení Kód zákazníka Celní Množství MJ J.cena Měna Celkem © DPH Země
+č Popis nomenklatura bez DPH bezDPH % původu
+
+Výrobce
+Číslo objednávky © P3570567
+
+1. 3M 9528-18x110mm 1000.00 ks 0.2600 EUR 260.000 21 IT
+oboustranná lepící páska, výsek 18x110mm
+3M 39811012
+Číslo objednávky © P10325787
+2 KPHBM-2012 QBDSURKC 1880639 3 000.00 KS 0.1588 EUR 476.400 21 CN
+LED SMD modro/éervena
+Kingbright 85474100
+Fakturace celkem EUR 891.04
+Rekapitulace DPH V Kč Kurs EUR/Kč : 25.045
+Sazba % Základ DPH Celkem
+Základní sazba 21 18 443.14 3 872.96 22 316.10
+18 443.14 3 872.96 22 316.10
+
+Váha NETTO kg: 0.092
+
+V ceně elektrozařízení je zahrnut recyklační poplatek REMA systému (https://www.rema.cloud)
+
+V souvislosti s novou povinností pro plátce DPH od roku 2016, viz novela zákona č. 235/2004 Sb., klademe důraz na kontrolu
+daňového dokladu ve všech jeho náležitostech. Pro účely kontrolního hlášení použijte variabilní symbol. Opravy dokladů jsme
+schopni vyřídit nejpozději do 15tého dne v následujícím měsíci od data dodání zboží.
+
+Faktura slouží současně jako dodací list Interní číslo: Počet balíků:
+
+Telefon: Fax: +420 889 541 550 E-mail: Web: www.moral.cz
+Vystavil:Zdeněk Marecký Strana: 1/ 1
+
+
+--------------------
+AI EXTRACTED JSON:
+{
+  "typ_dokumentu": {
+    "hodnota": "FAKTURA",
+    "box": [
+      1074,
+      69,
+      228,
+      36
+    ]
+  },
+  "prodavajici": {
+    "nazev": {
+      "hodnota": "TechMorava Systems s.r.o.",
+      "box": [
+        246,
+        127,
+        383,
+        29
+      ]
+    },
+    "ico": {
+      "hodnota": "27159384",
+      "box": [
+        304,
+        239,
+        132,
+        23
+      ]
+    },
+    "dic": {
+      "hodnota": "CZ27159384",
+      "box": [
+        582,
+        239,
+        171,
+        23
+      ]
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "Lípařská 112/7",
+        "box": [
+          247,
+          163,
+          195,
+          28
+        ]
+      },
+      "mesto": {
+        "hodnota": "Olomouc",
+        "box": [
+          370,
+          201,
+          118,
+          23
+        ]
+      },
+      "psc": {
+        "hodnota": "77900",
+        "box": [
+          246,
+          201,
+          89,
+          23
+        ]
+      },
+      "zeme": {
+        "hodnota": "CZ",
+        "box": [
+          582,
+          239,
+          171,
+          23
+        ]
+      }
+    },
+    "bankovni_spojeni": {
+      "cislo_uctu": {
+        "hodnota": "399848093 /0300",
+        "box": [
+          656,
+          369,
+          215,
+          20
+        ]
+      },
+      "iban": {
+        "hodnota": "CZ46 0300 0000 0003 7887 8983",
+        "box": [
+          991,
+          367,
+          402,
+          20
+        ]
+      },
+      "swift": {
+        "hodnota": "CIMO CZ PL",
+        "box": [
+          1534,
+          367,
+          154,
+          20
+        ]
+      }
+    }
+  },
+  "odberatel": {
+    "nazev": {
+      "hodnota": "Vltava IT Services s.r.o.",
+      "box": [
+        1094,
+        471,
+        332,
+        23
+      ]
+    },
+    "ico": {
+      "hodnota": "29481736",
+      "box": [
+        1159,
+        649,
+        132,
+        23
+      ]
+    },
+    "dic": {
+      "hodnota": "CZ29481736",
+      "box": [
+        1491,
+        649,
+        170,
+        23
+      ]
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "K Letišti 1045/2",
+        "box": [
+          1096,
+          550,
+          202,
+          23
+        ]
+      },
+      "mesto": {
+        "hodnota": "České Budějovice",
+        "box": [
+          1221,
+          585,
+          237,
+          34
+        ]
+      },
+      "psc": {
+        "hodnota": "37001",
+        "box": [
+          1095,
+          590,
+          85,
+          23
+        ]
+      },
+      "zeme": {
+        "hodnota": "CZ",
+        "box": [
+          582,
+          239,
+          171,
+          23
+        ]
+      }
+    }
+  },
+  "faktura": {
+    "cislo_faktury": {
+      "hodnota": "15786435",
+      "box": [
+        1376,
+        64,
+        208,
+        36
+      ]
+    },
+    "variabilni_symbol": {
+      "hodnota": "121401724",
+      "box": [
+        1413,
+        140,
+        147,
+        23
+      ]
+    },
+    "datum_vystaveni": {
+      "hodnota": "2025-08-30",
+      "box": []
+    },
+    "datum_splatnosti": {
+      "hodnota": "2025-09-13",
+      "box": []
+    },
+    "zpusob_uhrady": {
+      "hodnota": "Platebním příkazem",
+      "box": [
+        1436,
+        698,
+        262,
+        28
+      ]
+    }
+  },
+  "produkty": [
+    {
+      "nazev": {
+        "hodnota": "3M 9528-18x110mm oboustranná lepící páska, výsek 18x110mm",
+        "box": [
+          162,
+          964,
+          183,
+          17
+        ]
+      },
+      "mnozstvi": 1000.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          1147,
+          964,
+          21,
+          17
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "0.2600 EUR",
+          "box": [
+            1247,
+            964,
+            155,
+            17
+          ]
+        },
+        "hodnota": {
+          "hodnota": "0.26",
+          "box": [
+            1247,
+            964,
+            72,
+            17
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "260.000 EUR",
+          "box": [
+            1461,
+            964,
+            85,
+            17
+          ]
+        },
+        "hodnota": {
+          "hodnota": "260.0",
+          "box": [
+            1461,
+            964,
+            85,
+            17
+          ]
+        }
+      },
+      "dph_sazba": 21
+    },
+    {
+      "nazev": {
+        "hodnota": "KPHBM-2012 OBDSURKC LED SMD modro/červená",
+        "box": [
+          279,
+          1086,
+          137,
+          20
+        ]
+      },
+      "mnozstvi": 3000.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          1147,
+          964,
+          21,
+          17
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "0.1588 EUR",
+          "box": [
+            1247,
+            1087,
+            155,
+            17
+          ]
+        },
+        "hodnota": {
+          "hodnota": "0.1588",
+          "box": [
+            1247,
+            1087,
+            72,
+            17
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "476.400 EUR",
+          "box": [
+            1460,
+            1087,
+            86,
+            17
+          ]
+        },
+        "hodnota": {
+          "hodnota": "476.4",
+          "box": [
+            1460,
+            1087,
+            86,
+            17
+          ]
+        }
+      },
+      "dph_sazba": 21
+    }
+  ],
+  "celkem": {
+    "celkova_cena": {
+      "raw": {
+        "hodnota": "891.04 EUR",
+        "box": [
+          1593,
+          1307,
+          107,
+          27
+        ]
+      },
+      "hodnota": {
+        "hodnota": "891.04",
+        "box": [
+          1593,
+          1307,
+          107,
+          27
+        ]
+      },
+      "mena": "EUR"
+    },
+    "zaklad_dph": {
+      "hodnota": "18443.14",
+      "box": [
+        434,
+        1445,
+        72,
+        17
+      ]
+    },
+    "dph_celkem": {
+      "hodnota": "3872.96",
+      "box": [
+        640,
+        1445,
+        71,
+        17
+      ]
+    }
+  },
+  "metadata": {
+    "typ_dokumentu": "FAKTURA",
+    "stranky": 1,
+    "rezim": "AI (OpenRouter)"
+  }
+}
+
+==================================================
+
+### FILE: fa-vega-en.pdf
+----------------------------------------
+RAW OCR TEXT EXTRACTED:
+INVOICE 2025-0457
+NA LOGO Tax document
+
+Amount to pay Bank account 1234/2010
+
+Reference 20250457
+1 1,690.00 CZK Payment method Bank transfer
+
+Issued on Due on Taxable fulfillment due
+Feb 19, 2025 Mar 05, 2025 Feb 19, 2025
+
+Customer
+
+Apple Czech s.r.o.
+
+Klimentska 1216/46 Reg. no. 28897501
+110 00 Praha VAT ID CZ28897501
+
+Fakturujeme Vám následující položky
+
+VAT UNIT PRICE TOTAL W/O VAT
+
+3 ks © Školení personálu 21% 413.22 CZK 1,239.67 CZK
+1 ks Nový monitor 21% 2,479.34 CZK 2,479.34 CZK
+2 ks Magic mouse 21% 330.58 CZK 661.16 CZK
+2 ks © Apple iMac 5K 2020 | 27" 21% 40,413.22 CZK 80,826.45 CZK
+1 ks — Apple MacBook Pro 16" / M3 Pro 21% 40,157.02 CZK 40,157.02 CZK
+VAT RATE VAT BASE VAT
+
+21% 125,363.64 CZK 26,326.36 CZK
+
+151,690.00 CZK
+
+Thank You!
+
+Bořivoj Hejsek
+
+Hopsinkova 28 Reg.no. 87654321
+100 00 Praha VAT ID CZ87654321
+
+Společnost je zapsána v obchodním rejstříku vedeném oddíl, vložka.
+
+--------------------
+AI EXTRACTED JSON:
+{
+  "typ_dokumentu": {
+    "hodnota": "FAKTURA",
+    "box": []
+  },
+  "prodavajici": {
+    "nazev": {
+      "hodnota": "Bořivoj Hejsek",
+      "box": [
+        83,
+        2250,
+        214,
+        33
+      ]
+    },
+    "ico": {
+      "hodnota": "87654321",
+      "box": [
+        681,
+        2314,
+        137,
+        22
+      ]
+    },
+    "dic": {
+      "hodnota": "CZ87654321",
+      "box": [
+        681,
+        2358,
+        172,
+        22
+      ]
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "Hopsinkova 28",
+        "box": [
+          83,
+          2313,
+          191,
+          28
+        ]
+      },
+      "mesto": {
+        "hodnota": "Praha",
+        "box": [
+          185,
+          886,
+          72,
+          23
+        ]
+      },
+      "psc": {
+        "hodnota": "100 00",
+        "box": [
+          82,
+          2358,
+          92,
+          22
+        ]
+      },
+      "zeme": {
+        "hodnota": "CZ",
+        "box": [
+          440,
+          385,
+          119,
+          46
+        ]
+      }
+    }
+  },
+  "odberatel": {
+    "nazev": {
+      "hodnota": "Apple Czech s.r.o.",
+      "box": [
+        81,
+        784,
+        264,
+        32
+      ]
+    },
+    "ico": {
+      "hodnota": "28897501",
+      "box": [
+        717,
+        843,
+        138,
+        22
+      ]
+    },
+    "dic": {
+      "hodnota": "CZ28897501",
+      "box": [
+        717,
+        887,
+        173,
+        22
+      ]
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "Klimentská 1216/46",
+        "box": [
+          83,
+          841,
+          267,
+          28
+        ]
+      },
+      "mesto": {
+        "hodnota": "Praha",
+        "box": [
+          185,
+          886,
+          72,
+          23
+        ]
+      },
+      "psc": {
+        "hodnota": "110 00",
+        "box": [
+          82,
+          887,
+          92,
+          22
+        ]
+      },
+      "zeme": {
+        "hodnota": "CZ",
+        "box": [
+          440,
+          385,
+          119,
+          46
+        ]
+      }
+    }
+  },
+  "faktura": {
+    "cislo_faktury": {
+      "hodnota": "2025-0457",
+      "box": [
+        1403,
+        116,
+        299,
+        43
+      ]
+    },
+    "variabilni_symbol": {
+      "hodnota": "1234/2010",
+      "box": [
+        1149,
+        330,
+        151,
+        26
+      ]
+    },
+    "datum_vystaveni": {
+      "hodnota": "2025-02-19",
+      "box": [
+        188,
+        596,
+        66,
+        21
+      ]
+    },
+    "datum_splatnosti": {
+      "hodnota": "2025-03-05",
+      "box": [
+        188,
+        596,
+        66,
+        21
+      ]
+    },
+    "zpusob_uhrady": {
+      "hodnota": "Bank transfer",
+      "box": [
+        1150,
+        414,
+        174,
+        35
+      ]
+    }
+  },
+  "produkty": [
+    {
+      "nazev": {
+        "hodnota": "Školení personálu",
+        "box": [
+          244,
+          1219,
+          231,
+          33
+        ]
+      },
+      "mnozstvi": 3.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          166,
+          1224,
+          26,
+          23
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "413.22 CZK",
+          "box": [
+            1225,
+            1225,
+            155,
+            22
+          ]
+        },
+        "hodnota": {
+          "hodnota": "413.22",
+          "box": [
+            1225,
+            1225,
+            94,
+            22
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "1,239.67 CZK",
+          "box": [
+            1525,
+            1225,
+            179,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "1239.67",
+          "box": []
+        }
+      },
+      "dph_sazba": 21
+    },
+    {
+      "nazev": {
+        "hodnota": "Nový monitor",
+        "box": [
+          245,
+          1296,
+          174,
+          29
+        ]
+      },
+      "mnozstvi": 1.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          166,
+          1224,
+          26,
+          23
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "2,479.34 CZK",
+          "box": [
+            1201,
+            1298,
+            179,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "2479.34",
+          "box": []
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "2,479.34 CZK",
+          "box": [
+            1201,
+            1298,
+            179,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "2479.34",
+          "box": []
+        }
+      },
+      "dph_sazba": 21
+    },
+    {
+      "nazev": {
+        "hodnota": "Magic mouse",
+        "box": [
+          245,
+          1370,
+          170,
+          29
+        ]
+      },
+      "mnozstvi": 2.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          166,
+          1224,
+          26,
+          23
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "330.58 CZK",
+          "box": [
+            1226,
+            1371,
+            154,
+            22
+          ]
+        },
+        "hodnota": {
+          "hodnota": "330.58",
+          "box": [
+            1226,
+            1371,
+            93,
+            22
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "661.16 CZK",
+          "box": [
+            1550,
+            1371,
+            154,
+            22
+          ]
+        },
+        "hodnota": {
+          "hodnota": "661.16",
+          "box": [
+            1550,
+            1371,
+            93,
+            22
+          ]
+        }
+      },
+      "dph_sazba": 21
+    },
+    {
+      "nazev": {
+        "hodnota": "Apple iMac 5K 2020 | 27\"",
+        "box": [
+          243,
+          1442,
+          334,
+          29
+        ]
+      },
+      "mnozstvi": 2.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          166,
+          1224,
+          26,
+          23
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "40,413.22 CZK",
+          "box": [
+            1182,
+            1444,
+            198,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "40413.22",
+          "box": [
+            1225,
+            1225,
+            94,
+            22
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "80,826.45 CZK",
+          "box": [
+            1507,
+            1444,
+            197,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "80826.45",
+          "box": []
+        }
+      },
+      "dph_sazba": 21
+    },
+    {
+      "nazev": {
+        "hodnota": "Apple MacBook Pro 16\" / M3 Pro",
+        "box": [
+          243,
+          1516,
+          427,
+          28
+        ]
+      },
+      "mnozstvi": 1.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          166,
+          1224,
+          26,
+          23
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "40,157.02 CZK",
+          "box": [
+            1182,
+            1517,
+            198,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "40157.02",
+          "box": []
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "40,157.02 CZK",
+          "box": [
+            1182,
+            1517,
+            198,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "40157.02",
+          "box": []
+        }
+      },
+      "dph_sazba": 21
+    }
+  ],
+  "celkem": {
+    "celkova_cena": {
+      "raw": {
+        "hodnota": "151,690.00 CZK",
+        "box": [
+          1457,
+          1782,
+          247,
+          29
+        ]
+      },
+      "hodnota": {
+        "hodnota": "151690.0",
+        "box": []
+      },
+      "mena": "CZK"
+    },
+    "zaklad_dph": {
+      "hodnota": "125363.64",
+      "box": []
+    },
+    "dph_celkem": {
+      "hodnota": "26326.36",
+      "box": []
+    }
+  },
+  "metadata": {
+    "typ_dokumentu": "FAKTURA",
+    "stranky": 1,
+    "rezim": "AI (OpenRouter)"
+  }
+}
+
+==================================================
+
+### FILE: invoice.pdf
+----------------------------------------
+RAW OCR TEXT EXTRACTED:
+BILL FROM:
+
+Global Tech Solutions Ltd.
+
+102 Kingford Avenue
+London, ENG, W1B 4HF
+United Kingdom
+global.tech@global.com
+
+BILL TO:
+
+Sunrise Logistics Inc.
+4550 Harborview Road
+Seattle, DC, 98109
+United States
+sunrise@logistic.com
+
+Item
+
+Rising sun
+
+Description
+
+Clasic ex.
+
+INVOICE #
+INVOICE DATE
+AMOUNT DUE
+
+Quantity Unit Cost
+
+128.0 $5.99
+
+SUBTOTAL
+TAX (13.0%)
+TOTAL
+
+48733
+2026-01-28
+$866.39
+
+Line Total
+
+$766.72
+
+$766.72
+$99.67
+$866.39
+
+--------------------
+AI EXTRACTED JSON:
+{
+  "typ_dokumentu": {
+    "hodnota": "FAKTURA",
+    "box": []
+  },
+  "prodavajici": {
+    "nazev": {
+      "hodnota": "Global Tech Solutions Ltd.",
+      "box": [
+        116,
+        258,
+        260,
+        17
+      ]
+    },
+    "ico": {
+      "hodnota": "",
+      "box": []
+    },
+    "dic": {
+      "hodnota": "",
+      "box": []
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "102 Kingford Avenue",
+        "box": [
+          117,
+          292,
+          209,
+          22
+        ]
+      },
+      "mesto": {
+        "hodnota": "London",
+        "box": [
+          117,
+          326,
+          79,
+          20
+        ]
+      },
+      "psc": {
+        "hodnota": "W1B 4HF",
+        "box": [
+          260,
+          327,
+          91,
+          16
+        ]
+      },
+      "zeme": {
+        "hodnota": "United Kingdom",
+        "box": [
+          117,
+          360,
+          162,
+          22
+        ]
+      }
+    },
+    "bankovni_spojeni": {
+      "cislo_uctu": {
+        "hodnota": "",
+        "box": []
+      },
+      "iban": {
+        "hodnota": "",
+        "box": []
+      },
+      "swift": {
+        "hodnota": "",
+        "box": []
+      }
+    }
+  },
+  "odberatel": {
+    "nazev": {
+      "hodnota": "Sunrise Logistics Inc.",
+      "box": [
+        116,
+        682,
+        209,
+        21
+      ]
+    },
+    "ico": {
+      "hodnota": "",
+      "box": []
+    },
+    "dic": {
+      "hodnota": "",
+      "box": []
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "4550 Harborview Road",
+        "box": [
+          115,
+          715,
+          229,
+          17
+        ]
+      },
+      "mesto": {
+        "hodnota": "Seattle",
+        "box": [
+          116,
+          749,
+          73,
+          20
+        ]
+      },
+      "psc": {
+        "hodnota": "98109",
+        "box": [
+          238,
+          750,
+          59,
+          16
+        ]
+      },
+      "zeme": {
+        "hodnota": "United States",
+        "box": [
+          117,
+          783,
+          133,
+          17
+        ]
+      }
+    }
+  },
+  "faktura": {
+    "cislo_faktury": {
+      "hodnota": "48733",
+      "box": [
+        1579,
+        635,
+        61,
+        16
+      ]
+    },
+    "variabilni_symbol": {
+      "hodnota": "",
+      "box": []
+    },
+    "datum_vystaveni": {
+      "hodnota": "2026-01-28",
+      "box": [
+        1528,
+        673,
+        110,
+        16
+      ]
+    },
+    "datum_splatnosti": {
+      "hodnota": "",
+      "box": []
+    },
+    "zpusob_uhrady": {
+      "hodnota": "",
+      "box": []
+    }
+  },
+  "produkty": [
+    {
+      "nazev": {
+        "hodnota": "Rising sun",
+        "box": [
+          146,
+          1119,
+          100,
+          21
+        ]
+      },
+      "mnozstvi": 128.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": []
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "$5.99",
+          "box": [
+            1388,
+            1119,
+            52,
+            17
+          ]
+        },
+        "hodnota": {
+          "hodnota": "5.99",
+          "box": [
+            1388,
+            1119,
+            52,
+            17
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "$766.72",
+          "box": [
+            1562,
+            1119,
+            78,
+            17
+          ]
+        },
+        "hodnota": {
+          "hodnota": "766.72",
+          "box": [
+            1562,
+            1119,
+            78,
+            17
+          ]
+        }
+      },
+      "dph_sazba": 13
+    }
+  ],
+  "celkem": {
+    "celkova_cena": {
+      "raw": {
+        "hodnota": "$866.39",
+        "box": [
+          1560,
+          711,
+          79,
+          18
+        ]
+      },
+      "hodnota": {
+        "hodnota": "866.39",
+        "box": [
+          1560,
+          711,
+          79,
+          18
+        ]
+      },
+      "mena": "USD"
+    },
+    "zaklad_dph": {
+      "hodnota": "766.72",
+      "box": [
+        1562,
+        1119,
+        78,
+        17
+      ]
+    },
+    "dph_celkem": {
+      "hodnota": "99.67",
+      "box": [
+        1573,
+        1319,
+        65,
+        17
+      ]
+    }
+  },
+  "metadata": {
+    "typ_dokumentu": "FAKTURA",
+    "stranky": 1,
+    "rezim": "AI (OpenRouter)"
+  }
+}
+
+==================================================
+
