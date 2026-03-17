@@ -1,0 +1,363 @@
+{
+  "typ_dokumentu": {
+    "hodnota": "FAKTURA",
+    "box": [
+      1074,
+      69,
+      228,
+      36
+    ]
+  },
+  "prodavajici": {
+    "nazev": {
+      "hodnota": "TechMorava Systems s.r.o.",
+      "box": [
+        246,
+        127,
+        383,
+        29
+      ]
+    },
+    "ico": {
+      "hodnota": "27159384",
+      "box": [
+        304,
+        239,
+        132,
+        23
+      ]
+    },
+    "dic": {
+      "hodnota": "CZ27159384",
+      "box": [
+        582,
+        239,
+        171,
+        23
+      ]
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "Lípařská 112/7",
+        "box": [
+          247,
+          163,
+          195,
+          28
+        ]
+      },
+      "mesto": {
+        "hodnota": "Olomouc",
+        "box": [
+          370,
+          201,
+          118,
+          23
+        ]
+      },
+      "psc": {
+        "hodnota": "77900",
+        "box": [
+          246,
+          201,
+          89,
+          23
+        ]
+      },
+      "zeme": {
+        "hodnota": "Česká republika",
+        "box": []
+      }
+    },
+    "bankovni_spojeni": {
+      "cislo_uctu": {
+        "hodnota": "894502919/0300",
+        "box": [
+          797,
+          369,
+          74,
+          20
+        ]
+      },
+      "iban": {
+        "hodnota": "CZ7503000000000186452998",
+        "box": [
+          1065,
+          368,
+          57,
+          19
+        ]
+      },
+      "swift": {
+        "hodnota": "CIMO CZ PL",
+        "box": [
+          1534,
+          367,
+          154,
+          20
+        ]
+      }
+    }
+  },
+  "odberatel": {
+    "nazev": {
+      "hodnota": "Vltava IT Services s.r.o.",
+      "box": [
+        1094,
+        471,
+        332,
+        23
+      ]
+    },
+    "ico": {
+      "hodnota": "29481736",
+      "box": [
+        1159,
+        649,
+        132,
+        23
+      ]
+    },
+    "dic": {
+      "hodnota": "CZ29481736",
+      "box": [
+        1491,
+        649,
+        170,
+        23
+      ]
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "K Letišti 1045/2",
+        "box": [
+          1096,
+          550,
+          202,
+          23
+        ]
+      },
+      "mesto": {
+        "hodnota": "České Budějovice",
+        "box": [
+          1221,
+          585,
+          237,
+          34
+        ]
+      },
+      "psc": {
+        "hodnota": "37001",
+        "box": [
+          1095,
+          590,
+          85,
+          23
+        ]
+      },
+      "zeme": {
+        "hodnota": "Česká republika",
+        "box": []
+      }
+    }
+  },
+  "faktura": {
+    "cislo_faktury": {
+      "hodnota": "15786435",
+      "box": [
+        1376,
+        64,
+        208,
+        36
+      ]
+    },
+    "variabilni_symbol": {
+      "hodnota": "121401724",
+      "box": [
+        1413,
+        140,
+        147,
+        23
+      ]
+    },
+    "datum_vystaveni": {
+      "hodnota": "2025-08-30",
+      "box": []
+    },
+    "datum_splatnosti": {
+      "hodnota": "2025-09-13",
+      "box": []
+    },
+    "zpusob_uhrady": {
+      "hodnota": "Platebním příkazem",
+      "box": [
+        1436,
+        698,
+        262,
+        28
+      ]
+    }
+  },
+  "produkty": [
+    {
+      "nazev": {
+        "hodnota": "3M 9528-18x110mm oboustranná lepící páska, výsek 18x110mm",
+        "box": [
+          162,
+          964,
+          183,
+          17
+        ]
+      },
+      "mnozstvi": 1000.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          1147,
+          964,
+          21,
+          17
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "0.2600 EUR",
+          "box": [
+            1247,
+            964,
+            155,
+            17
+          ]
+        },
+        "hodnota": {
+          "hodnota": "0.26",
+          "box": [
+            1247,
+            964,
+            72,
+            17
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "260.000 EUR",
+          "box": [
+            1461,
+            964,
+            85,
+            17
+          ]
+        },
+        "hodnota": {
+          "hodnota": "260.0",
+          "box": [
+            1461,
+            964,
+            85,
+            17
+          ]
+        }
+      },
+      "dph_sazba": 21
+    },
+    {
+      "nazev": {
+        "hodnota": "KPHBM-2012 OBDSURKC 1880639 LED SMD modro/červená Kingbright",
+        "box": [
+          279,
+          1086,
+          137,
+          20
+        ]
+      },
+      "mnozstvi": 3000.0,
+      "mj": {
+        "hodnota": "KS",
+        "box": [
+          1147,
+          964,
+          21,
+          17
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "0.1588 EUR",
+          "box": [
+            1247,
+            1087,
+            155,
+            17
+          ]
+        },
+        "hodnota": {
+          "hodnota": "0.1588",
+          "box": [
+            1247,
+            1087,
+            72,
+            17
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "476.400 EUR",
+          "box": [
+            1460,
+            1087,
+            86,
+            17
+          ]
+        },
+        "hodnota": {
+          "hodnota": "476.4",
+          "box": [
+            1460,
+            1087,
+            86,
+            17
+          ]
+        }
+      },
+      "dph_sazba": 21
+    }
+  ],
+  "celkem": {
+    "celkova_cena": {
+      "raw": {
+        "hodnota": "891.04",
+        "box": [
+          1593,
+          1307,
+          107,
+          27
+        ]
+      },
+      "hodnota": {
+        "hodnota": "891.04",
+        "box": [
+          1593,
+          1307,
+          107,
+          27
+        ]
+      },
+      "mena": "EUR"
+    },
+    "zaklad_dph": {
+      "hodnota": "736.4",
+      "box": []
+    },
+    "dph_celkem": {
+      "hodnota": "154.64",
+      "box": []
+    }
+  },
+  "metadata": {
+    "typ_dokumentu": "FAKTURA",
+    "stranky": 1,
+    "rezim": "AI (Gemini)"
+  }
+}

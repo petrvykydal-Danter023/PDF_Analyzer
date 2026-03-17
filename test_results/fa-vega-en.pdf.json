@@ -1,0 +1,519 @@
+{
+  "typ_dokumentu": {
+    "hodnota": "FAKTURA",
+    "box": []
+  },
+  "prodavajici": {
+    "nazev": {
+      "hodnota": "Bořivoj Hejsek",
+      "box": [
+        83,
+        2250,
+        214,
+        33
+      ]
+    },
+    "ico": {
+      "hodnota": "87654321",
+      "box": [
+        681,
+        2314,
+        137,
+        22
+      ]
+    },
+    "dic": {
+      "hodnota": "CZ87654321",
+      "box": [
+        681,
+        2358,
+        172,
+        22
+      ]
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "Hopsinkova 28",
+        "box": [
+          83,
+          2313,
+          191,
+          28
+        ]
+      },
+      "mesto": {
+        "hodnota": "Praha",
+        "box": [
+          185,
+          886,
+          72,
+          23
+        ]
+      },
+      "psc": {
+        "hodnota": "100 00",
+        "box": [
+          82,
+          2358,
+          92,
+          22
+        ]
+      },
+      "zeme": {
+        "hodnota": "CZ",
+        "box": [
+          440,
+          385,
+          119,
+          46
+        ]
+      }
+    },
+    "bankovni_spojeni": {
+      "cislo_uctu": {
+        "hodnota": "1234/2010",
+        "box": [
+          1149,
+          330,
+          151,
+          26
+        ]
+      },
+      "iban": {
+        "hodnota": "None",
+        "box": []
+      },
+      "swift": {
+        "hodnota": "None",
+        "box": []
+      }
+    }
+  },
+  "odberatel": {
+    "nazev": {
+      "hodnota": "Apple Czech s.r.o.",
+      "box": [
+        81,
+        784,
+        264,
+        32
+      ]
+    },
+    "ico": {
+      "hodnota": "28897501",
+      "box": [
+        717,
+        843,
+        138,
+        22
+      ]
+    },
+    "dic": {
+      "hodnota": "CZ28897501",
+      "box": [
+        717,
+        887,
+        173,
+        22
+      ]
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "Klimentská 1216/46",
+        "box": [
+          83,
+          841,
+          267,
+          28
+        ]
+      },
+      "mesto": {
+        "hodnota": "Praha",
+        "box": [
+          185,
+          886,
+          72,
+          23
+        ]
+      },
+      "psc": {
+        "hodnota": "110 00",
+        "box": [
+          82,
+          887,
+          92,
+          22
+        ]
+      },
+      "zeme": {
+        "hodnota": "CZ",
+        "box": [
+          440,
+          385,
+          119,
+          46
+        ]
+      }
+    }
+  },
+  "faktura": {
+    "cislo_faktury": {
+      "hodnota": "2025-0457",
+      "box": [
+        1403,
+        116,
+        299,
+        43
+      ]
+    },
+    "variabilni_symbol": {
+      "hodnota": "20250457",
+      "box": [
+        1150,
+        374,
+        135,
+        21
+      ]
+    },
+    "datum_vystaveni": {
+      "hodnota": "2025-02-19",
+      "box": [
+        188,
+        596,
+        66,
+        21
+      ]
+    },
+    "datum_splatnosti": {
+      "hodnota": "2025-03-05",
+      "box": [
+        188,
+        596,
+        66,
+        21
+      ]
+    },
+    "zpusob_uhrady": {
+      "hodnota": "Bank transfer",
+      "box": [
+        1150,
+        414,
+        174,
+        35
+      ]
+    }
+  },
+  "produkty": [
+    {
+      "nazev": {
+        "hodnota": "Školení personálu",
+        "box": [
+          244,
+          1219,
+          231,
+          33
+        ]
+      },
+      "mnozstvi": 3.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          166,
+          1224,
+          26,
+          23
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "413.22 CZK",
+          "box": [
+            1225,
+            1225,
+            155,
+            22
+          ]
+        },
+        "hodnota": {
+          "hodnota": "413.22",
+          "box": [
+            1225,
+            1225,
+            94,
+            22
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "1,239.67 CZK",
+          "box": [
+            1525,
+            1225,
+            179,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "1239.67",
+          "box": []
+        }
+      },
+      "dph_sazba": 21
+    },
+    {
+      "nazev": {
+        "hodnota": "Nový monitor",
+        "box": [
+          245,
+          1296,
+          174,
+          29
+        ]
+      },
+      "mnozstvi": 1.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          166,
+          1224,
+          26,
+          23
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "2,479.34 CZK",
+          "box": [
+            1201,
+            1298,
+            179,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "2479.34",
+          "box": []
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "2,479.34 CZK",
+          "box": [
+            1201,
+            1298,
+            179,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "2479.34",
+          "box": []
+        }
+      },
+      "dph_sazba": 21
+    },
+    {
+      "nazev": {
+        "hodnota": "Magic mouse",
+        "box": [
+          245,
+          1370,
+          170,
+          29
+        ]
+      },
+      "mnozstvi": 2.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          166,
+          1224,
+          26,
+          23
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "330.58 CZK",
+          "box": [
+            1226,
+            1371,
+            154,
+            22
+          ]
+        },
+        "hodnota": {
+          "hodnota": "330.58",
+          "box": [
+            1226,
+            1371,
+            93,
+            22
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "661.16 CZK",
+          "box": [
+            1550,
+            1371,
+            154,
+            22
+          ]
+        },
+        "hodnota": {
+          "hodnota": "661.16",
+          "box": [
+            1550,
+            1371,
+            93,
+            22
+          ]
+        }
+      },
+      "dph_sazba": 21
+    },
+    {
+      "nazev": {
+        "hodnota": "Apple iMac 5K 2020 | 27\"",
+        "box": [
+          243,
+          1442,
+          334,
+          29
+        ]
+      },
+      "mnozstvi": 2.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          166,
+          1224,
+          26,
+          23
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "40,413.22 CZK",
+          "box": [
+            1182,
+            1444,
+            198,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "40413.22",
+          "box": [
+            1225,
+            1225,
+            94,
+            22
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "80,826.45 CZK",
+          "box": [
+            1507,
+            1444,
+            197,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "80826.45",
+          "box": []
+        }
+      },
+      "dph_sazba": 21
+    },
+    {
+      "nazev": {
+        "hodnota": "Apple MacBook Pro 16\" / M3 Pro",
+        "box": [
+          243,
+          1516,
+          427,
+          28
+        ]
+      },
+      "mnozstvi": 1.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": [
+          166,
+          1224,
+          26,
+          23
+        ]
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "40,157.02 CZK",
+          "box": [
+            1182,
+            1517,
+            198,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "40157.02",
+          "box": []
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "40,157.02 CZK",
+          "box": [
+            1182,
+            1517,
+            198,
+            25
+          ]
+        },
+        "hodnota": {
+          "hodnota": "40157.02",
+          "box": []
+        }
+      },
+      "dph_sazba": 21
+    }
+  ],
+  "celkem": {
+    "celkova_cena": {
+      "raw": {
+        "hodnota": "151,690.00 CZK",
+        "box": [
+          1457,
+          1782,
+          247,
+          29
+        ]
+      },
+      "hodnota": {
+        "hodnota": "151690.0",
+        "box": []
+      },
+      "mena": "CZK"
+    },
+    "zaklad_dph": {
+      "hodnota": "125363.64",
+      "box": []
+    },
+    "dph_celkem": {
+      "hodnota": "26326.36",
+      "box": []
+    }
+  },
+  "metadata": {
+    "typ_dokumentu": "FAKTURA",
+    "stranky": 1,
+    "rezim": "AI (Gemini)"
+  }
+}

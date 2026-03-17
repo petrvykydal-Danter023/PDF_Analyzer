@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw
 import json
 
 from extraction_logic import extract_data_with_coords
-from template_engine import TemplateStore, build_lines_from_ocr
+from template_engine import TemplateStore
 import pypdfium2 as pdfium
 
 st.set_page_config(layout="wide", page_title="Extrakce Faktur – Auto-Template Engine")
@@ -26,6 +26,21 @@ if known:
 else:
     st.sidebar.info("Zatím žádné šablony. Nahrajte první fakturu a uložte šablonu!")
 
+st.sidebar.divider()
+st.sidebar.subheader("⚙️ Nastavení extrakce")
+extraction_mode = st.sidebar.radio(
+    "Metoda extrakce:",
+    ["Heuristika / Šablony", "AI (Gemini)"],
+    index=0,
+    help="AI mód (Gemini) je vhodnější pro atypické nebo anglické dokumenty."
+)
+
+ai_key = None
+if extraction_mode == "AI (Gemini)":
+    ai_key = st.sidebar.text_input("Gemini API Key", value="AIzaSyD6Z6F3e1exP1liF2VLk6rpfvHXFDGP3aQ", type="password", help="Získejte klíč na Google AI Studio.")
+    if not ai_key:
+        st.sidebar.warning("⚠️ Pro AI mód je nutný API klíč.")
+
 uploaded_file = st.file_uploader("Nahrajte fakturu (PNG / JPG / PDF)", type=["png", "jpg", "jpeg", "pdf"])
 
 if uploaded_file:
@@ -39,9 +54,11 @@ if uploaded_file:
 
     img_array = np.array(image.convert('RGB'))
 
-    with st.spinner('🔍 Analyzuji dokument (Tesseract OCR + template engine)...'):
+    mode_val = "ai" if extraction_mode == "AI (Gemini)" else "heuristic"
+    
+    with st.spinner('🔍 Analyzuji dokument...'):
         try:
-            data, raw_ocr, meta = extract_data_with_coords(img_array)
+            data, raw_ocr, meta = extract_data_with_coords(img_array, mode=mode_val, api_key=ai_key)
             success = True
         except Exception as e:
             st.error(f"Chyba při zpracování: {e}")
@@ -63,24 +80,36 @@ if uploaded_file:
         # ---- Levý sloupec: Vizualizace ----
         with col1:
             st.subheader("Vizualizace (Bounding Boxy)")
+            show_all = st.checkbox("Zobrazit všechna detekovaná pole (žlutě)", value=True)
             draw = ImageDraw.Draw(image)
 
             def draw_boxes(obj, color="red"):
                 if isinstance(obj, dict):
                     if "box" in obj and obj["box"]:
                         b = obj["box"]
-                        draw.rectangle([b[0], b[1], b[0]+b[2], b[1]+b[3]], outline=color, width=3)
-                        val = str(obj.get("hodnota", ""))[:30]
-                        draw.text((b[0], max(0, b[1]-15)), val, fill=color)
+                        if b and len(b) == 4:
+                            draw.rectangle([b[0], b[1], b[0]+b[2], b[1]+b[3]], outline=color, width=3)
+                            val = str(obj.get("hodnota", ""))[:30]
+                            draw.text((b[0], max(0, b[1]-15)), val, fill=color)
                     for k, v in obj.items():
-                        draw_boxes(v, color)
+                        if k != "metadata":
+                            draw_boxes(v, color)
                 elif isinstance(obj, list):
                     for item in obj:
                         draw_boxes(item, color)
 
+            # 1. Všechna detekovaná KV pole (žlutě)
+            if show_all and meta.get("kv_pairs"):
+                for kv in meta["kv_pairs"]:
+                    lb = kv["label_box"]
+                    vb = kv["value_box"]
+                    draw.rectangle([lb[0], lb[1], lb[0]+lb[2], lb[1]+lb[3]], outline="yellow", width=2)
+                    draw.rectangle([vb[0], vb[1], vb[0]+vb[2], vb[1]+vb[3]], outline="orange", width=2)
+
+            # 2. Úspěšně extrahovaná data (červeně)
             draw_boxes(data, color="red")
 
-            # Tabulkový region (OpenCV)
+            # 3. Tabulkový region (modře)
             if meta.get("table_box"):
                 tb = meta["table_box"]
                 draw.rectangle([tb[0], tb[1], tb[0]+tb[2], tb[1]+tb[3]], outline="blue", width=4)
@@ -127,7 +156,7 @@ if uploaded_file:
 
                 selected_fields = {}
                 if kv_pairs:
-                    for kv in kv_pairs[:20]:  # Max 20 polí
+                    for idx, kv in enumerate(kv_pairs[:20]):  # Max 20 polí
                         cols = st.columns([2, 3, 1])
                         with cols[0]:
                             st.caption(f"🏷 {kv['label']}")
@@ -135,13 +164,13 @@ if uploaded_file:
                             val_input = st.text_input(
                                 f"Hodnota ({kv['label']})",
                                 value=kv['value'],
-                                key=f"kv_{kv['label']}",
+                                key=f"kv_{kv['label']}_{idx}",
                                 label_visibility="collapsed"
                             )
                         with cols[2]:
-                            include = st.checkbox("✓", value=True, key=f"inc_{kv['label']}")
+                            include = st.checkbox("✓", value=True, key=f"inc_{kv['label']}_{idx}")
                         if include:
-                            selected_fields[kv['label']] = {**kv, "value": val_input}
+                            selected_fields[f"{kv['label']}_{idx}"] = {**kv, "value": val_input}
 
                 # Tabulková oblast
                 if meta.get("table_box"):

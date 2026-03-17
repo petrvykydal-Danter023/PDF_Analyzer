@@ -1,0 +1,323 @@
+{
+  "typ_dokumentu": {
+    "hodnota": "FAKTURA",
+    "box": []
+  },
+  "prodavajici": {
+    "nazev": {
+      "hodnota": "Blue Horizon Technologies LLC",
+      "box": [
+        116,
+        121,
+        615,
+        35
+      ]
+    },
+    "ico": {
+      "hodnota": "None",
+      "box": []
+    },
+    "dic": {
+      "hodnota": "None",
+      "box": []
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "742 Evergreen Terrace",
+        "box": [
+          115,
+          165,
+          457,
+          34
+        ]
+      },
+      "mesto": {
+        "hodnota": "None",
+        "box": []
+      },
+      "psc": {
+        "hodnota": "None",
+        "box": []
+      },
+      "zeme": {
+        "hodnota": "USA",
+        "box": [
+          116,
+          252,
+          79,
+          28
+        ]
+      }
+    },
+    "bankovni_spojeni": {
+      "cislo_uctu": {
+        "hodnota": "None",
+        "box": []
+      },
+      "iban": {
+        "hodnota": "None",
+        "box": []
+      },
+      "swift": {
+        "hodnota": "None",
+        "box": []
+      }
+    }
+  },
+  "odberatel": {
+    "nazev": {
+      "hodnota": "Delta Office Technology s.r.o.",
+      "box": [
+        119,
+        400,
+        365,
+        24
+      ]
+    },
+    "ico": {
+      "hodnota": "None",
+      "box": []
+    },
+    "dic": {
+      "hodnota": "None",
+      "box": []
+    },
+    "adresa": {
+      "ulice": {
+        "hodnota": "Štefánikova 223/15",
+        "box": [
+          118,
+          458,
+          244,
+          25
+        ]
+      },
+      "mesto": {
+        "hodnota": "Plzeň",
+        "box": [
+          216,
+          488,
+          61,
+          22
+        ]
+      },
+      "psc": {
+        "hodnota": "301 00",
+        "box": [
+          119,
+          490,
+          84,
+          20
+        ]
+      },
+      "zeme": {
+        "hodnota": "Czech Republic",
+        "box": [
+          127,
+          520,
+          193,
+          24
+        ]
+      }
+    }
+  },
+  "faktura": {
+    "cislo_faktury": {
+      "hodnota": "241914",
+      "box": [
+        283,
+        900,
+        103,
+        20
+      ]
+    },
+    "variabilni_symbol": {
+      "hodnota": "241914",
+      "box": [
+        283,
+        900,
+        103,
+        20
+      ]
+    },
+    "datum_vystaveni": {
+      "hodnota": "2025-09-03",
+      "box": [
+        679,
+        944,
+        60,
+        20
+      ]
+    },
+    "datum_splatnosti": {
+      "hodnota": "2025-09-03",
+      "box": [
+        679,
+        944,
+        60,
+        20
+      ]
+    },
+    "zpusob_uhrady": {
+      "hodnota": "PayPal",
+      "box": [
+        373,
+        983,
+        76,
+        24
+      ]
+    }
+  },
+  "produkty": [
+    {
+      "nazev": {
+        "hodnota": "M1.2-0.25 x 2.5mm Stainless Steel Pan Head Screw",
+        "box": [
+          240,
+          1102,
+          126,
+          20
+        ]
+      },
+      "mnozstvi": 2000.0,
+      "mj": {
+        "hodnota": "ks",
+        "box": []
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "$0.60",
+          "box": [
+            1098,
+            1102,
+            77,
+            23
+          ]
+        },
+        "hodnota": {
+          "hodnota": "0.6",
+          "box": [
+            1098,
+            1102,
+            77,
+            23
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "$1,200.00",
+          "box": [
+            1385,
+            1102,
+            139,
+            24
+          ]
+        },
+        "hodnota": {
+          "hodnota": "1200.0",
+          "box": []
+        }
+      },
+      "dph_sazba": 0
+    },
+    {
+      "nazev": {
+        "hodnota": "Shipping (FedEx)",
+        "box": [
+          1047,
+          564,
+          68,
+          20
+        ]
+      },
+      "mnozstvi": 1.0,
+      "mj": {
+        "hodnota": "služba",
+        "box": []
+      },
+      "cena_za_kus": {
+        "raw": {
+          "hodnota": "$5.00",
+          "box": [
+            1644,
+            1229,
+            69,
+            23
+          ]
+        },
+        "hodnota": {
+          "hodnota": "5.0",
+          "box": [
+            1644,
+            1229,
+            69,
+            23
+          ]
+        }
+      },
+      "cena_celkem": {
+        "raw": {
+          "hodnota": "$5.00",
+          "box": [
+            1644,
+            1229,
+            69,
+            23
+          ]
+        },
+        "hodnota": {
+          "hodnota": "5.0",
+          "box": [
+            1644,
+            1229,
+            69,
+            23
+          ]
+        }
+      },
+      "dph_sazba": 0
+    }
+  ],
+  "celkem": {
+    "celkova_cena": {
+      "raw": {
+        "hodnota": "$1,205.00",
+        "box": [
+          1575,
+          1284,
+          139,
+          24
+        ]
+      },
+      "hodnota": {
+        "hodnota": "1205.0",
+        "box": [
+          607,
+          1490,
+          80,
+          15
+        ]
+      },
+      "mena": "USD"
+    },
+    "zaklad_dph": {
+      "hodnota": "1205.0",
+      "box": [
+        607,
+        1490,
+        80,
+        15
+      ]
+    },
+    "dph_celkem": {
+      "hodnota": "0.0",
+      "box": []
+    }
+  },
+  "metadata": {
+    "typ_dokumentu": "FAKTURA",
+    "stranky": 1,
+    "rezim": "AI (Gemini)"
+  }
+}
