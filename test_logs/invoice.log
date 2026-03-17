@@ -1,0 +1,285 @@
+================================================================================
+SYSTEM LOG FOR: invoice.pdf
+================================================================================
+
+[KLASIFIKACE]
+Typ dokumentu: FAKTURA
+Režim extrakce: AI (OpenRouter)
+
+[EXTRAKČNÍ VÝSLEDEK (JSON)]
+{
+    "typ_dokumentu": {
+        "hodnota": "FAKTURA",
+        "box": []
+    },
+    "prodavajici": {
+        "nazev": {
+            "hodnota": "Global Tech Solutions Ltd.",
+            "box": [
+                116,
+                258,
+                260,
+                17
+            ]
+        },
+        "ico": {
+            "hodnota": "None",
+            "box": []
+        },
+        "dic": {
+            "hodnota": "None",
+            "box": []
+        },
+        "adresa": {
+            "ulice": {
+                "hodnota": "102 Kingford Avenue",
+                "box": [
+                    117,
+                    292,
+                    209,
+                    22
+                ]
+            },
+            "mesto": {
+                "hodnota": "London",
+                "box": [
+                    117,
+                    326,
+                    79,
+                    20
+                ]
+            },
+            "psc": {
+                "hodnota": "W1B 4HF",
+                "box": [
+                    260,
+                    327,
+                    91,
+                    16
+                ]
+            },
+            "zeme": {
+                "hodnota": "United Kingdom",
+                "box": [
+                    117,
+                    360,
+                    162,
+                    22
+                ]
+            }
+        },
+        "bankovni_spojeni": {
+            "cislo_uctu": {
+                "hodnota": "None",
+                "box": []
+            },
+            "iban": {
+                "hodnota": "None",
+                "box": []
+            },
+            "swift": {
+                "hodnota": "None",
+                "box": []
+            }
+        }
+    },
+    "odberatel": {
+        "nazev": {
+            "hodnota": "Sunrise Logistics Inc.",
+            "box": [
+                116,
+                682,
+                209,
+                21
+            ]
+        },
+        "ico": {
+            "hodnota": "None",
+            "box": []
+        },
+        "dic": {
+            "hodnota": "None",
+            "box": []
+        },
+        "adresa": {
+            "ulice": {
+                "hodnota": "4550 Harborview Road",
+                "box": [
+                    115,
+                    715,
+                    229,
+                    17
+                ]
+            },
+            "mesto": {
+                "hodnota": "Seattle",
+                "box": [
+                    116,
+                    749,
+                    73,
+                    20
+                ]
+            },
+            "psc": {
+                "hodnota": "98109",
+                "box": [
+                    238,
+                    750,
+                    59,
+                    16
+                ]
+            },
+            "zeme": {
+                "hodnota": "United States",
+                "box": [
+                    117,
+                    783,
+                    133,
+                    17
+                ]
+            }
+        }
+    },
+    "faktura": {
+        "cislo_faktury": {
+            "hodnota": "48733",
+            "box": [
+                1579,
+                635,
+                61,
+                16
+            ]
+        },
+        "variabilni_symbol": {
+            "hodnota": "None",
+            "box": []
+        },
+        "datum_vystaveni": {
+            "hodnota": "2026-01-28",
+            "box": [
+                1528,
+                673,
+                110,
+                16
+            ]
+        },
+        "datum_splatnosti": {
+            "hodnota": "None",
+            "box": []
+        },
+        "zpusob_uhrady": {
+            "hodnota": "None",
+            "box": []
+        }
+    },
+    "produkty": [
+        {
+            "nazev": {
+                "hodnota": "Rising sun Clasic ex.",
+                "box": [
+                    146,
+                    1119,
+                    58,
+                    21
+                ]
+            },
+            "mnozstvi": 128.0,
+            "mj": {
+                "hodnota": "None",
+                "box": []
+            },
+            "cena_za_kus": {
+                "raw": {
+                    "hodnota": "$5.99",
+                    "box": [
+                        1388,
+                        1119,
+                        52,
+                        17
+                    ]
+                },
+                "hodnota": {
+                    "hodnota": "5.99",
+                    "box": [
+                        1388,
+                        1119,
+                        52,
+                        17
+                    ]
+                }
+            },
+            "cena_celkem": {
+                "raw": {
+                    "hodnota": "$766.72",
+                    "box": [
+                        1562,
+                        1119,
+                        78,
+                        17
+                    ]
+                },
+                "hodnota": {
+                    "hodnota": "766.72",
+                    "box": [
+                        1562,
+                        1119,
+                        78,
+                        17
+                    ]
+                }
+            },
+            "dph_sazba": 13.0
+        }
+    ],
+    "celkem": {
+        "celkova_cena": {
+            "raw": {
+                "hodnota": "$866.39",
+                "box": [
+                    1560,
+                    711,
+                    79,
+                    18
+                ]
+            },
+            "hodnota": {
+                "hodnota": "866.39",
+                "box": [
+                    1560,
+                    711,
+                    79,
+                    18
+                ]
+            },
+            "mena": "USD"
+        },
+        "zaklad_dph": {
+            "hodnota": "766.72",
+            "box": [
+                1562,
+                1119,
+                78,
+                17
+            ]
+        },
+        "dph_celkem": {
+            "hodnota": "99.67",
+            "box": [
+                1573,
+                1319,
+                65,
+                17
+            ]
+        }
+    },
+    "metadata": {
+        "typ_dokumentu": "FAKTURA",
+        "stranky": 1,
+        "rezim": "AI (OpenRouter)"
+    }
+}
+
+[RAW OCR TEXT (Tesseract)]
+BILL FROM: Global Tech Solutions Ltd. 102 Kingford Avenue London, ENG, W1B 4HF United Kingdom global.techeglobal.com BILL TO: Sunrise Logistics Inc. 4550 Harborview Road Seattle, DC, 98109 United States sunriseAlogistic.com Item Rising sun Description Clasic ex. INVOICE + INVOICE DATE AMOUNT DUE Ouantity Unit Cost 128.0 $5.99 SUBTOTAL TAX (13.0%) TOTAL 48733 2026-01-28 $866.39 Line Total $766.72 $766.72 $99.67 $866.39
+
+[METADATA & KOTVY]

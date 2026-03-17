@@ -1,0 +1,339 @@
+================================================================================
+SYSTEM LOG FOR: objednavka-2.pdf
+================================================================================
+
+[KLASIFIKACE]
+Typ dokumentu: EMAIL/OSTATNÍ
+Režim extrakce: AI (OpenRouter)
+
+[EXTRAKČNÍ VÝSLEDEK (JSON)]
+{
+    "typ_dokumentu": {
+        "hodnota": "FAKTURA",
+        "box": []
+    },
+    "prodavajici": {
+        "nazev": {
+            "hodnota": "Společnost s.r.o.",
+            "box": [
+                121,
+                175,
+                351,
+                45
+            ]
+        },
+        "ico": {
+            "hodnota": "44433311",
+            "box": [
+                391,
+                449,
+                153,
+                27
+            ]
+        },
+        "dic": {
+            "hodnota": "CZ44433311",
+            "box": [
+                393,
+                491,
+                199,
+                27
+            ]
+        },
+        "adresa": {
+            "ulice": {
+                "hodnota": "Sokolovská 123",
+                "box": [
+                    121,
+                    226,
+                    251,
+                    28
+                ]
+            },
+            "mesto": {
+                "hodnota": "Praha 9 Libeň",
+                "box": [
+                    242,
+                    270,
+                    220,
+                    27
+                ]
+            },
+            "psc": {
+                "hodnota": "190 00",
+                "box": [
+                    123,
+                    270,
+                    105,
+                    27
+                ]
+            },
+            "zeme": {
+                "hodnota": "Česká republika",
+                "box": [
+                    402,
+                    2247,
+                    76,
+                    18
+                ]
+            }
+        },
+        "bankovni_spojeni": {
+            "cislo_uctu": {
+                "hodnota": "1112223333 / 2010",
+                "box": [
+                    393,
+                    618,
+                    231,
+                    20
+                ]
+            },
+            "iban": {
+                "hodnota": "CZ7020100000001112223333",
+                "box": [
+                    392,
+                    686,
+                    366,
+                    20
+                ]
+            },
+            "swift": {
+                "hodnota": "None",
+                "box": []
+            }
+        }
+    },
+    "odberatel": {
+        "nazev": {
+            "hodnota": "Firma A s.r.o.",
+            "box": [
+                947,
+                260,
+                246,
+                45
+            ]
+        },
+        "ico": {
+            "hodnota": "33344411",
+            "box": [
+                1158,
+                421,
+                124,
+                23
+            ]
+        },
+        "dic": {
+            "hodnota": "CZ33344411",
+            "box": [
+                1158,
+                455,
+                165,
+                23
+            ]
+        },
+        "adresa": {
+            "ulice": {
+                "hodnota": "Erbenova 123",
+                "box": [
+                    946,
+                    313,
+                    221,
+                    27
+                ]
+            },
+            "mesto": {
+                "hodnota": "Ostrava — Vítkovice",
+                "box": [
+                    1066,
+                    354,
+                    310,
+                    28
+                ]
+            },
+            "psc": {
+                "hodnota": "703 00",
+                "box": [
+                    945,
+                    355,
+                    108,
+                    27
+                ]
+            },
+            "zeme": {
+                "hodnota": "Česká republika",
+                "box": [
+                    402,
+                    2247,
+                    76,
+                    18
+                ]
+            }
+        }
+    },
+    "faktura": {
+        "cislo_faktury": {
+            "hodnota": "None",
+            "box": []
+        },
+        "variabilni_symbol": {
+            "hodnota": "None",
+            "box": []
+        },
+        "datum_vystaveni": {
+            "hodnota": "2017-04-24",
+            "box": []
+        },
+        "datum_splatnosti": {
+            "hodnota": "None",
+            "box": []
+        },
+        "zpusob_uhrady": {
+            "hodnota": "None",
+            "box": []
+        }
+    },
+    "produkty": [
+        {
+            "nazev": {
+                "hodnota": "úklid",
+                "box": [
+                    137,
+                    939,
+                    47,
+                    17
+                ]
+            },
+            "mnozstvi": 1.0,
+            "mj": {
+                "hodnota": "ks",
+                "box": []
+            },
+            "cena_za_kus": {
+                "raw": {
+                    "hodnota": "None",
+                    "box": []
+                },
+                "hodnota": {
+                    "hodnota": "0.0",
+                    "box": []
+                }
+            },
+            "cena_celkem": {
+                "raw": {
+                    "hodnota": "None",
+                    "box": []
+                },
+                "hodnota": {
+                    "hodnota": "0.0",
+                    "box": []
+                }
+            },
+            "dph_sazba": 21
+        },
+        {
+            "nazev": {
+                "hodnota": "vysávání",
+                "box": [
+                    136,
+                    981,
+                    95,
+                    22
+                ]
+            },
+            "mnozstvi": 1.0,
+            "mj": {
+                "hodnota": "ks",
+                "box": []
+            },
+            "cena_za_kus": {
+                "raw": {
+                    "hodnota": "None",
+                    "box": []
+                },
+                "hodnota": {
+                    "hodnota": "0.0",
+                    "box": []
+                }
+            },
+            "cena_celkem": {
+                "raw": {
+                    "hodnota": "None",
+                    "box": []
+                },
+                "hodnota": {
+                    "hodnota": "0.0",
+                    "box": []
+                }
+            },
+            "dph_sazba": 21
+        },
+        {
+            "nazev": {
+                "hodnota": "tepování",
+                "box": [
+                    136,
+                    1024,
+                    92,
+                    22
+                ]
+            },
+            "mnozstvi": 1.0,
+            "mj": {
+                "hodnota": "ks",
+                "box": []
+            },
+            "cena_za_kus": {
+                "raw": {
+                    "hodnota": "None",
+                    "box": []
+                },
+                "hodnota": {
+                    "hodnota": "0.0",
+                    "box": []
+                }
+            },
+            "cena_celkem": {
+                "raw": {
+                    "hodnota": "None",
+                    "box": []
+                },
+                "hodnota": {
+                    "hodnota": "0.0",
+                    "box": []
+                }
+            },
+            "dph_sazba": 21
+        }
+    ],
+    "celkem": {
+        "celkova_cena": {
+            "raw": {
+                "hodnota": "None",
+                "box": []
+            },
+            "hodnota": {
+                "hodnota": "0.0",
+                "box": []
+            },
+            "mena": null
+        },
+        "zaklad_dph": {
+            "hodnota": "0.0",
+            "box": []
+        },
+        "dph_celkem": {
+            "hodnota": "0.0",
+            "box": []
+        }
+    },
+    "metadata": {
+        "typ_dokumentu": "EMAIL/OSTATNÍ",
+        "stranky": 1,
+        "rezim": "AI (OpenRouter)"
+    }
+}
+
+[RAW OCR TEXT (Tesseract)]
+OBJEDNÁVKA Společnost s.r.o. Sokolovská 123 190 00 Praha 9 Libeň Firma zapsána u Krajského soudu v Praze, spisovná značka C, vložka 12345 IČO: DIČ: Neplátce DPH 44433311 CZ44433311 1112223333 / 2010 Fio banka, a.s. ÚČET: BANKA: IBAN: CZ7020100000001112223333 Odběratel: Firma A s.r.o. Erbenova 123 703 00 Ostrava — Vítkovice IČO: DIČ: 33344411 CZ33344411 Dodací adresa Firma A s.r.o. - pobočka B Brněnská 65 74615 Olomouc Datum vystavení 24.4.2017 Popis položky Množství úklid 1 vysávání tepování 1 1 Dodavatel: Moje firma, s.r.o. Námě řího z Poděbrad 123 1600 Praha) , Česká r blika Info oje“ ae www.moje-firma.cz Odběratel:
+
+[METADATA & KOTVY]

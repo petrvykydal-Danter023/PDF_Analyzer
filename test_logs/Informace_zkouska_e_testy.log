@@ -1,0 +1,147 @@
+================================================================================
+SYSTEM LOG FOR: Informace_zkouska_e_testy.pdf
+================================================================================
+
+[KLASIFIKACE]
+Typ dokumentu: EMAIL/OSTATNÍ
+Režim extrakce: AI (OpenRouter)
+
+[EXTRAKČNÍ VÝSLEDEK (JSON)]
+{
+    "typ_dokumentu": {
+        "hodnota": "FAKTURA",
+        "box": []
+    },
+    "prodavajici": {
+        "nazev": {
+            "hodnota": "",
+            "box": []
+        },
+        "ico": {
+            "hodnota": "",
+            "box": []
+        },
+        "dic": {
+            "hodnota": "",
+            "box": []
+        },
+        "adresa": {
+            "ulice": {
+                "hodnota": "",
+                "box": []
+            },
+            "mesto": {
+                "hodnota": "",
+                "box": []
+            },
+            "psc": {
+                "hodnota": "",
+                "box": []
+            },
+            "zeme": {
+                "hodnota": "",
+                "box": []
+            }
+        },
+        "bankovni_spojeni": {
+            "cislo_uctu": {
+                "hodnota": "",
+                "box": []
+            },
+            "iban": {
+                "hodnota": "",
+                "box": []
+            },
+            "swift": {
+                "hodnota": "",
+                "box": []
+            }
+        }
+    },
+    "odberatel": {
+        "nazev": {
+            "hodnota": "",
+            "box": []
+        },
+        "ico": {
+            "hodnota": "",
+            "box": []
+        },
+        "dic": {
+            "hodnota": "",
+            "box": []
+        },
+        "adresa": {
+            "ulice": {
+                "hodnota": "",
+                "box": []
+            },
+            "mesto": {
+                "hodnota": "",
+                "box": []
+            },
+            "psc": {
+                "hodnota": "",
+                "box": []
+            },
+            "zeme": {
+                "hodnota": "",
+                "box": []
+            }
+        }
+    },
+    "faktura": {
+        "cislo_faktury": {
+            "hodnota": "",
+            "box": []
+        },
+        "variabilni_symbol": {
+            "hodnota": "",
+            "box": []
+        },
+        "datum_vystaveni": {
+            "hodnota": "",
+            "box": []
+        },
+        "datum_splatnosti": {
+            "hodnota": "",
+            "box": []
+        },
+        "zpusob_uhrady": {
+            "hodnota": "",
+            "box": []
+        }
+    },
+    "produkty": [],
+    "celkem": {
+        "celkova_cena": {
+            "raw": {
+                "hodnota": "",
+                "box": []
+            },
+            "hodnota": {
+                "hodnota": "0.0",
+                "box": []
+            },
+            "mena": ""
+        },
+        "zaklad_dph": {
+            "hodnota": "0.0",
+            "box": []
+        },
+        "dph_celkem": {
+            "hodnota": "0.0",
+            "box": []
+        }
+    },
+    "metadata": {
+        "typ_dokumentu": "EMAIL/OSTATNÍ",
+        "stranky": 1,
+        "rezim": "AI (OpenRouter)"
+    }
+}
+
+[RAW OCR TEXT (Tesseract)]
+Informace ke konání zkoušky z předmětu EBC-P Právo 1 2) 3) 4) 5) 6) 7 Předmět je ukončen zkouškou pomocí e- testu v e-learningovém programu, V informačním systému univerzity ve studovně PEF v přízemí budovy O. K závěrečnému e-testu se může přihlásit student, který v Průběžném hodnocení získal zápočet. Pozor změna pro prodloužení času zkoušky pro studenty se specifickými studijními potřebami. Tito studenti se přihlásí na termín vypsaný pro všechny. Pak oznámí o kolik procent chtějí prodloužit čas e-testu na adresu kelblova(©mendelu.cz alespoň 2 pracovní dny před termínem konání testu. Ve studovně PEF začnou psát test a vyučující, který bude mít dozor, test v uis prodlouží o potřebná procenta. Test obsahuje 30 otázek, každá je hodnocena 2 body. Minimální hranice pro dosažení známky E je 60 % celkového bodového hodnocení předmětu, což se skládá z minima 24 bodů v Průběžném hodnocení a 36 bodů ze zkouškového e-testu. Hodnotící škála je tedy následující: Méně než 60 bodů F, 60 bodů a více E, 68 bodů a více D, 75 bodů a více C, 83 bodů a více B, 90 bodů a více A. Body z Průběžného hodnocení se budou zohledňovat při výsledku zkoušky, za každý bod navíc nad minimum 24 se k výsledku zkoušky přičte 1 bod. Výsledek zkoušky ovšem musí být minimálně 36 bodů, body z průběžného hodnocení se přičítají až k minimu 36 bodů. Studenti, zapsaní na daný termín, se dostaví minimálně 10 min. před začátkem testu. Pro ověření totožnosti předloží ISIC kartu a upozorňuji, že k přihlášení na UIS je nezbytné znát své přístupové heslo. Student přihlášený na příslušný termín se přihlásí do uis a poté v čas začátku testu rozbalí šipkou test předmětu EBC-P Právo. Pro přihlášení je nejlépe je zvolit prohlížeč Mozilla Firefox a is.smendelu.cz napsat přímo do adresního řádku, nikoliv is vyhledávat přes Google. Test je tvořen 30 otázkami typu: výběrová 1 N, výběrová M zN, otázka s odpovědí ANO — NE, seřazovací otázka. V zadání otázky je uvedeno o jaký typ otázky se jedná. Test trvá 30 minut a po 30 minutách se i nedokončený test sám odešle. Je zapnutá korekce hádání, tj. za špatnou odpověď se odečítají body, ovšem většinou pouze vřádu desetin bodu. Chybná je taktika zvolit variantu „neodpovídat na otázku“ u více odpovědí, student pak nemá sice špatné odpovědi, ale dostane se do situace, kdy nemá potřebný počet kladných bodů. U otázek, kde může být více odpovědí správně, se za správné přičítá zlomek ze 2 bodů a za špatné se odečítá zlomek ze 2 bodů. Doporučuji aspoň některé odpovědi zaškrtnout, je v nich vždy minimálně 1, spíše víc správných odpovědí. Nikdy tam není otázka, že by nebyla ani jedna odpověď správně.
+
+[METADATA & KOTVY]

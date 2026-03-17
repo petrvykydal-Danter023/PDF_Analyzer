@@ -1,0 +1,265 @@
+================================================================================
+SYSTEM LOG FOR: 241014_no IFSC tax code_ P32 tax_anon.pdf
+================================================================================
+
+[KLASIFIKACE]
+Typ dokumentu: FAKTURA
+Režim extrakce: AI (OpenRouter)
+
+[EXTRAKČNÍ VÝSLEDEK (JSON)]
+{
+    "typ_dokumentu": {
+        "hodnota": "FAKTURA",
+        "box": []
+    },
+    "prodavajici": {
+        "nazev": {
+            "hodnota": "Blue Horizon Technologies LLC",
+            "box": [
+                116,
+                121,
+                615,
+                35
+            ]
+        },
+        "ico": {
+            "hodnota": "",
+            "box": []
+        },
+        "dic": {
+            "hodnota": "",
+            "box": []
+        },
+        "adresa": {
+            "ulice": {
+                "hodnota": "742 Evergreen Terrace",
+                "box": [
+                    115,
+                    165,
+                    457,
+                    34
+                ]
+            },
+            "mesto": {
+                "hodnota": "",
+                "box": []
+            },
+            "psc": {
+                "hodnota": "",
+                "box": []
+            },
+            "zeme": {
+                "hodnota": "USA",
+                "box": [
+                    116,
+                    252,
+                    79,
+                    28
+                ]
+            }
+        },
+        "bankovni_spojeni": {
+            "cislo_uctu": {
+                "hodnota": "",
+                "box": []
+            },
+            "iban": {
+                "hodnota": "",
+                "box": []
+            },
+            "swift": {
+                "hodnota": "",
+                "box": []
+            }
+        }
+    },
+    "odberatel": {
+        "nazev": {
+            "hodnota": "Delta Office Technology s.r.o.",
+            "box": [
+                119,
+                400,
+                365,
+                24
+            ]
+        },
+        "ico": {
+            "hodnota": "",
+            "box": []
+        },
+        "dic": {
+            "hodnota": "",
+            "box": []
+        },
+        "adresa": {
+            "ulice": {
+                "hodnota": "Štefánikova 223/15",
+                "box": [
+                    118,
+                    458,
+                    244,
+                    25
+                ]
+            },
+            "mesto": {
+                "hodnota": "Plzeň",
+                "box": [
+                    216,
+                    488,
+                    61,
+                    22
+                ]
+            },
+            "psc": {
+                "hodnota": "301 00",
+                "box": [
+                    119,
+                    490,
+                    84,
+                    20
+                ]
+            },
+            "zeme": {
+                "hodnota": "Czech Republic",
+                "box": [
+                    127,
+                    520,
+                    193,
+                    24
+                ]
+            }
+        }
+    },
+    "faktura": {
+        "cislo_faktury": {
+            "hodnota": "241914",
+            "box": [
+                283,
+                900,
+                103,
+                20
+            ]
+        },
+        "variabilni_symbol": {
+            "hodnota": "",
+            "box": []
+        },
+        "datum_vystaveni": {
+            "hodnota": "2025-09-03",
+            "box": [
+                679,
+                944,
+                60,
+                20
+            ]
+        },
+        "datum_splatnosti": {
+            "hodnota": "",
+            "box": []
+        },
+        "zpusob_uhrady": {
+            "hodnota": "PayPal or Credit Card",
+            "box": [
+                373,
+                983,
+                261,
+                24
+            ]
+        }
+    },
+    "produkty": [
+        {
+            "nazev": {
+                "hodnota": "M1.2-0.25 x 2.5mm Stainless Steel Pan Head Screw",
+                "box": [
+                    240,
+                    1102,
+                    126,
+                    20
+                ]
+            },
+            "mnozstvi": 2000.0,
+            "mj": {
+                "hodnota": "ks",
+                "box": []
+            },
+            "cena_za_kus": {
+                "raw": {
+                    "hodnota": "$0.60",
+                    "box": [
+                        1098,
+                        1102,
+                        77,
+                        23
+                    ]
+                },
+                "hodnota": {
+                    "hodnota": "0.6",
+                    "box": [
+                        1098,
+                        1102,
+                        77,
+                        23
+                    ]
+                }
+            },
+            "cena_celkem": {
+                "raw": {
+                    "hodnota": "$1,200.00",
+                    "box": [
+                        1385,
+                        1102,
+                        139,
+                        24
+                    ]
+                },
+                "hodnota": {
+                    "hodnota": "1200.0",
+                    "box": []
+                }
+            },
+            "dph_sazba": 0
+        }
+    ],
+    "celkem": {
+        "celkova_cena": {
+            "raw": {
+                "hodnota": "$1,205.00",
+                "box": [
+                    1575,
+                    1284,
+                    139,
+                    24
+                ]
+            },
+            "hodnota": {
+                "hodnota": "1205.0",
+                "box": [
+                    607,
+                    1490,
+                    80,
+                    15
+                ]
+            },
+            "mena": "USD"
+        },
+        "zaklad_dph": {
+            "hodnota": "1200.0",
+            "box": []
+        },
+        "dph_celkem": {
+            "hodnota": "0.0",
+            "box": []
+        }
+    },
+    "metadata": {
+        "typ_dokumentu": "FAKTURA",
+        "stranky": 1,
+        "rezim": "AI (OpenRouter)"
+    }
+}
+
+[RAW OCR TEXT (Tesseract)]
+Blue Horizon Technologies LLC 742 Evergreen Terrace ; USA Hard to Find-Mini Machine Screws 601-964-48785 CUSTOMER: Delta Office Technology s.r.o. Marek Benda Štefánikova 223/15 301 00 Plzeň Czech Republic, Czech Republic SOLD TO: SHIP TO: Delta Office Technology s.r.o. Delta Office Technology s.r.o. Marek Benda Marek Benda Štefánikova 223/15 Štefánikova 223/15 301 00 Plzeň 301 00 Plzeň Czech Republic, Czech Republic Czech Republic +420812131440 purchase ©kubala.com Invoice No. 241914 Date Ordered: Tuesday 03 September, 2025 Payment Method: PayPal or Credit Card Products Model Tax Price (ex) Price (inc) Total (ex) Total (inc) 2000 x M1.2-0.25 x 2.5mm Stainless Steel Pan Head 20999 0% $0.60 $0.60 $1,200.00 $1,200.00 Screw 420999 Sub-Total: $1,200.00 Use Your Own FedEx Account (FedEx - Put your account number, Shipping method (Next Day, etc) in $5.00 the instruction box below. This option is ONLY good for FedEx on your account.): : Total: $1,205.00 Date Added Status Comments 09/03/2024 04:09:31. Confirmed © Fedex account number 276577269, Fedex International Priority Next Day 09/03/2024 04:09:31. Confirmed PayPal status: Completed © 01:09:15 Sep 03, 2025 PDT Trans ID:1PN553364T989415X Amount: 1205.00 USD.
+
+[METADATA & KOTVY]
